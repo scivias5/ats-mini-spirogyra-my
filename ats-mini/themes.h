@@ -346,17 +346,17 @@ const ColorTheme theme[] = {
     0xFFFF, // batt_icon : blanc pour l’icône de batterie
     0x7789, // band_text : gris bleuté pour le texte de la bande
     0x7789, // mode_text : gris bleuté pour le mode d’affichage
-    0x1084, // mode_border : gris bleuté pour le contour du mode
-    0x0000, // box_bg : fond noir pour les zones de contenu
-    0x1084, // box_border : gris bleuté pour délimiter les boîtes
+    0x73D2, // mode_border : gris bleuté pour le contour du mode
+    0x39CB, // box_bg : fond noir pour les zones de contenu
+    0x73D2, // box_border : gris bleuté pour délimiter les boîtes
     0xFFFF, // box_text : texte blanc à l’intérieur des boîtes
     0xF800, // box_off_bg : rouge vif pour signaler les zones désactivées
     0xFFFF, // box_off_text : texte blanc pour une bonne lisibilité même désactivé
     0x0000, // menu_bg : fond noir pour le menu
     0x1084, // menu_border : magenta pour encadrer le menu
-    0xFFFF, // menu_hdr : texte blanc pour l’en-tête du menu
+    0x6F48, // menu_hdr : texte blanc pour l’en-tête du menu
     0x7BEF, // menu_item : gris bleuté pour les éléments du menu
-    0xDE6A, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
+    0xF3A6, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
     0x31E9, // menu_hl_text : texte blanc sur fond surligné
     0x6F08, // menu_param : blanc pour les paramètres du menu
     0xBD4C, // freq_text : blanc pour le texte de fréquence
