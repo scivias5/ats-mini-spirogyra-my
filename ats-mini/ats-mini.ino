@@ -2192,6 +2192,7 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
+      spr.setFreeFont(&poxel_font16pt7b);
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
