@@ -330,41 +330,41 @@ const ColorTheme theme[] = {
 
  {
     "Winamp",
-    0x0000, // bg : fond noir pour rappeler l’obscurité du skin Winamp
-    0xFFFF, // text : texte blanc pour un bon contraste
+    0x2927, // bg : fond noir pour rappeler l’obscurité du skin Winamp
+    0x6EA9, // text : texte blanc pour un bon contraste
     0x7BEF, // text_muted : gris bleuté pour les textes secondaires
-    0xF800, // text_warn : rouge vif pour les alertes et avertissements
-    0x001F, // smeter_icon : bleu pour rappeler les accents lumineux
-    0x001F, // smeter_bar : bleu pour une cohérence graphique
-    0xFFFF, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
-    0xF81F, // save_icon : magenta, mélange de rouge et de bleu, pour un look rétro
-    0x7BEF, // batt_voltage : gris bleuté pour l’indicateur de tension
-    0xF81F, // batt_border : magenta pour souligner le contour
-    0x7BEF, // batt_full : gris bleuté indiquant une batterie pleine
-    0xF800, // batt_low : rouge vif pour signaler une batterie faible
+    0xE68A, // text_warn : rouge vif pour les alertes et avertissements
+    0xE68A, // smeter_icon : bleu pour rappeler les accents lumineux
+    0xF3A6, // smeter_bar : bleu pour une cohérence graphique
+    0xF3A6, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
+    0xE68A, // save_icon : magenta, mélange de rouge et de bleu, pour un look rétro
+    0x7789, // batt_voltage : gris bleuté pour l’indicateur de tension
+    0x0000, // batt_border : magenta pour souligner le contour
+    0x7789, // batt_full : gris bleuté indiquant une batterie pleine
+    0xCEBB, // batt_low : rouge vif pour signaler une batterie faible
     0x0000, // batt_charge : noir, afin de garder l’homogénéité du fond
     0xFFFF, // batt_icon : blanc pour l’icône de batterie
-    0x7BEF, // band_text : gris bleuté pour le texte de la bande
-    0x7BEF, // mode_text : gris bleuté pour le mode d’affichage
-    0x7BEF, // mode_border : gris bleuté pour le contour du mode
+    0x7789, // band_text : gris bleuté pour le texte de la bande
+    0x7789, // mode_text : gris bleuté pour le mode d’affichage
+    0x1084, // mode_border : gris bleuté pour le contour du mode
     0x0000, // box_bg : fond noir pour les zones de contenu
-    0x7BEF, // box_border : gris bleuté pour délimiter les boîtes
+    0x1084, // box_border : gris bleuté pour délimiter les boîtes
     0xFFFF, // box_text : texte blanc à l’intérieur des boîtes
     0xF800, // box_off_bg : rouge vif pour signaler les zones désactivées
     0xFFFF, // box_off_text : texte blanc pour une bonne lisibilité même désactivé
     0x0000, // menu_bg : fond noir pour le menu
-    0xF81F, // menu_border : magenta pour encadrer le menu
+    0x1084, // menu_border : magenta pour encadrer le menu
     0xFFFF, // menu_hdr : texte blanc pour l’en-tête du menu
     0x7BEF, // menu_item : gris bleuté pour les éléments du menu
-    0xF800, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
-    0xFFFF, // menu_hl_text : texte blanc sur fond surligné
-    0xFFFF, // menu_param : blanc pour les paramètres du menu
-    0xFFFF, // freq_text : blanc pour le texte de fréquence
-    0x7BEF, // funit_text : gris bleuté pour l’unité de fréquence
-    0x7BEF, // rds_text : gris bleuté pour le texte RDS
-    0xFFFF, // scale_text : blanc pour le texte de l’échelle
-    0xFFFF, // scale_pointer : blanc pour le pointeur de l’échelle
-    0xFFFF, // scale_line : blanc pour la ligne de l’échelle
+    0xDE6A, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
+    0x31E9, // menu_hl_text : texte blanc sur fond surligné
+    0x6F08, // menu_param : blanc pour les paramètres du menu
+    0xBD4C, // freq_text : blanc pour le texte de fréquence
+    0x6F08, // funit_text : gris bleuté pour l’unité de fréquence
+    0x6F08, // rds_text : gris bleuté pour le texte RDS
+    0xD6DB, // scale_text : blanc pour le texte de l’échelle
+    0xBAE5, // scale_pointer : blanc pour le pointeur de l’échelle
+    0xDE6A, // scale_line : blanc pour la ligne de l’échelle
   },
 
 {
