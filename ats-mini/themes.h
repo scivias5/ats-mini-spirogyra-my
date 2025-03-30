@@ -328,6 +328,83 @@ const ColorTheme theme[] = {
     0x2364, // scale_line
   }
 
+ {
+"Winamp",
+    0x0000, // bg : fond noir pour rappeler l’obscurité du skin Winamp
+    0xFFFF, // text : texte blanc pour un bon contraste
+    0x7BEF, // text_muted : gris bleuté pour les textes secondaires
+    0xF800, // text_warn : rouge vif pour les alertes et avertissements
+    0x001F, // smeter_icon : bleu pour rappeler les accents lumineux
+    0x001F, // smeter_bar : bleu pour une cohérence graphique
+    0xFFFF, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
+    0xF81F, // save_icon : magenta, mélange de rouge et de bleu, pour un look rétro
+    0x7BEF, // batt_voltage : gris bleuté pour l’indicateur de tension
+    0xF81F, // batt_border : magenta pour souligner le contour
+    0x7BEF, // batt_full : gris bleuté indiquant une batterie pleine
+    0xF800, // batt_low : rouge vif pour signaler une batterie faible
+    0x0000, // batt_charge : noir, afin de garder l’homogénéité du fond
+    0xFFFF, // batt_icon : blanc pour l’icône de batterie
+    0x7BEF, // band_text : gris bleuté pour le texte de la bande
+    0x7BEF, // mode_text : gris bleuté pour le mode d’affichage
+    0x7BEF, // mode_border : gris bleuté pour le contour du mode
+    0x0000, // box_bg : fond noir pour les zones de contenu
+    0x7BEF, // box_border : gris bleuté pour délimiter les boîtes
+    0xFFFF, // box_text : texte blanc à l’intérieur des boîtes
+    0xF800, // box_off_bg : rouge vif pour signaler les zones désactivées
+    0xFFFF, // box_off_text : texte blanc pour une bonne lisibilité même désactivé
+    0x0000, // menu_bg : fond noir pour le menu
+    0xF81F, // menu_border : magenta pour encadrer le menu
+    0xFFFF, // menu_hdr : texte blanc pour l’en-tête du menu
+    0x7BEF, // menu_item : gris bleuté pour les éléments du menu
+    0xF800, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
+    0xFFFF, // menu_hl_text : texte blanc sur fond surligné
+    0xFFFF, // menu_param : blanc pour les paramètres du menu
+    0xFFFF, // freq_text : blanc pour le texte de fréquence
+    0x7BEF, // funit_text : gris bleuté pour l’unité de fréquence
+    0x7BEF, // rds_text : gris bleuté pour le texte RDS
+    0xFFFF, // scale_text : blanc pour le texte de l’échelle
+    0xFFFF, // scale_pointer : blanc pour le pointeur de l’échelle
+    0xFFFF, // scale_line : blanc pour la ligne de l’échelle
+  },
+
+"Girly",
+    0xF6B2, // bg : rose pastel pour le fond
+    0xD69A, // text : rose gold pour le texte principal
+    0xB4B4, // text_muted : lavande douce pour le texte atténué
+    0xF800, // text_warn : rouge vif pour les avertissements
+    0xB4B4, // smeter_icon : lavande douce pour l'icône du smètre
+    0xB4B4, // smeter_bar : lavande douce pour la barre du smètre
+    0xD69A, // smeter_bar_plus : rose gold pour la partie complémentaire du smètre
+    0xE73C, // save_icon : rose vif pour l'icône de sauvegarde
+    0xB4B4, // batt_voltage : lavande douce pour l'indicateur de tension de batterie
+    0xD69A, // batt_border : rose gold pour le contour de la batterie
+    0xB4B4, // batt_full : lavande douce indiquant une batterie pleine
+    0xF800, // batt_low : rouge vif pour signaler une batterie faible
+    0xF6B2, // batt_charge : rose pastel pour l'état de charge
+    0xD69A, // batt_icon : rose gold pour l'icône de batterie
+    0xB4B4, // band_text : lavande douce pour le texte de la bande
+    0xB4B4, // mode_text : lavande douce pour le texte du mode
+    0xB4B4, // mode_border : lavande douce pour le contour du mode
+    0xF6B2, // box_bg : rose pastel pour le fond des boîtes
+    0xB4B4, // box_border : lavande douce pour le contour des boîtes
+    0xB4B4, // box_text : lavande douce pour le texte dans les boîtes
+    0xF800, // box_off_bg : rouge vif pour les boîtes désactivées
+    0xD69A, // box_off_text : rose gold pour le texte désactivé
+    0xF6B2, // menu_bg : rose pastel pour le fond du menu
+    0xE73C, // menu_border : rose vif pour le contour du menu
+    0xD69A, // menu_hdr : rose gold pour l'en-tête du menu
+    0xB4B4, // menu_item : lavande douce pour les items du menu
+    0xF800, // menu_hl_bg : rouge vif pour le fond de sélection
+    0xD69A, // menu_hl_text : rose gold pour le texte sélectionné
+    0xD69A, // menu_param : rose gold pour les paramètres du menu
+    0xD69A, // freq_text : rose gold pour le texte de fréquence
+    0xB4B4, // funit_text : lavande douce pour l'unité de fréquence
+    0xB4B4, // rds_text : lavande douce pour le texte RDS
+    0xD69A, // scale_text : rose gold pour le texte de l'échelle
+    0xE73C, // scale_pointer : rose vif pour le pointeur de l'échelle
+    0xE73C, // scale_line : rose vif pour la ligne de l'échelle
+  }
+
 };
 
 const uint8_t lastTheme = (sizeof theme / sizeof(ColorTheme)) - 1;
