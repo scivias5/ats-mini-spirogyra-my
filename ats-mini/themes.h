@@ -330,80 +330,80 @@ const ColorTheme theme[] = {
 
  {
     "Winamp",
-    0x2927, // bg : fond noir pour rappeler l’obscurité du skin Winamp
-    0x6EA9, // text : texte blanc pour un bon contraste
-    0x7BEF, // text_muted : gris bleuté pour les textes secondaires
-    0xE68A, // text_warn : rouge vif pour les alertes et avertissements
-    0xE68A, // smeter_icon : bleu pour rappeler les accents lumineux
-    0xF3A6, // smeter_bar : bleu pour une cohérence graphique
-    0xFA80, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
-    0xE68A, // save_icon : magenta, mélange de rouge et de bleu, pour un look rétro
-    0x7789, // batt_voltage : gris bleuté pour l’indicateur de tension
-    0x0000, // batt_border : magenta pour souligner le contour
-    0xFF96, // batt_full : gris bleuté indiquant une batterie pleine
-    0xF801, // batt_low : rouge vif pour signaler une batterie faible
-    0x0000, // batt_charge : noir, afin de garder l’homogénéité du fond
-    0xFFFF, // batt_icon : blanc pour l’icône de batterie
-    0x7789, // band_text : gris bleuté pour le texte de la bande
-    0x7789, // mode_text : gris bleuté pour le mode d’affichage
-    0x73D2, // mode_border : gris bleuté pour le contour du mode
-    0x2127, // box_bg : fond noir pour les zones de contenu
-    0x73D2, // box_border : gris bleuté pour délimiter les boîtes
-    0xFFFF, // box_text : texte blanc à l’intérieur des boîtes
-    0xF800, // box_off_bg : rouge vif pour signaler les zones désactivées
-    0xFFFF, // box_off_text : texte blanc pour une bonne lisibilité même désactivé
-    0x0000, // menu_bg : fond noir pour le menu
-    0x1084, // menu_border : magenta pour encadrer le menu
-    0x6F48, // menu_hdr : texte blanc pour l’en-tête du menu
-    0x7BEF, // menu_item : gris bleuté pour les éléments du menu
-    0xF3A6, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
-    0x31E9, // menu_hl_text : texte blanc sur fond surligné
-    0x6F08, // menu_param : blanc pour les paramètres du menu
-    0xFF23, // freq_text : blanc pour le texte de fréquence
-    0x6F08, // funit_text : gris bleuté pour l’unité de fréquence
-    0x6F08, // rds_text : gris bleuté pour le texte RDS
-    0xD6DB, // scale_text : blanc pour le texte de l’échelle
-    0xBAE5, // scale_pointer : blanc pour le pointeur de l’échelle
-    0xDE6A, // scale_line : blanc pour la ligne de l’échelle
+    0x2927, // bg
+    0x6EA9, // text
+    0x7BEF, // text_muted
+    0xE68A, // text_warn
+    0xE68A, // smeter_icon
+    0xF3A6, // smeter_bar
+    0xFA80, // smeter_bar_plus
+    0xE68A, // save_icon
+    0x7789, // batt_voltage
+    0x0000, // batt_border
+    0xFF96, // batt_full
+    0xF801, // batt_low
+    0x0000, // batt_charge
+    0xFFFF, // batt_icon
+    0x7789, // band_text
+    0x7789, // mode_text
+    0x73D2, // mode_border
+    0x2127, // box_bg
+    0x73D2, // box_border
+    0xFFFF, // box_text
+    0xF800, // box_off_bg
+    0xFFFF, // box_off_text
+    0x0000, // menu_bg
+    0x1084, // menu_border
+    0x6F48, // menu_hdr
+    0x7BEF, // menu_item
+    0xF3A6, // menu_hl_bg
+    0x31E9, // menu_hl_text
+    0x6F08, // menu_param
+    0xFF23, // freq_text
+    0x6F08, // funit_text
+    0x6F08, // rds_text
+    0xD6DB, // scale_text
+    0xBAE5, // scale_pointer
+    0xDE6A, // scale_line
   },
 
 {
     "Girly",
-    0xFC8E, // bg : rose pastel pour le fond
-    0xF808, // text : rose gold pour le texte principal
-    0xBAF1, // text_muted : lavande douce pour le texte atténué
-    0xF800, // text_warn : rouge vif pour les avertissements
-    0xF808, // smeter_icon : lavande douce pour l'icône du smètre
-    0xF808, // smeter_bar : lavande douce pour la barre du smètre
-    0xB08D, // smeter_bar_plus : rose gold pour la partie complémentaire du smètre
-    0xD889, // save_icon : rose vif pour l'icône de sauvegarde
-    0xD889, // batt_voltage : lavande douce pour l'indicateur de tension de batterie
-    0x4083, // batt_border : rose gold pour le contour de la batterie
-    0xE00B, // batt_full : lavande douce indiquant une batterie pleine
-    0xE000, // batt_low : rouge vif pour signaler une batterie faible
-    0xC8F1, // batt_charge : rose pastel pour l'état de charge
-    0xD69A, // batt_icon : rose gold pour l'icône de batterie
-    0xE00B, // band_text : lavande douce pour le texte de la bande
-    0xFFFF, // mode_text : lavande douce pour le texte du mode
-    0x4083, // mode_border : lavande douce pour le contour du mode
-    0xFC8E, // box_bg : rose pastel pour le fond des boîtes
-    0xFC8E, // box_border : lavande douce pour le contour des boîtes
-    0xF808, // box_text : lavande douce pour le texte dans les boîtes
-    0xFC8E, // box_off_bg : rouge vif pour les boîtes désactivées
-    0xFFFF, // box_off_text : rose gold pour le texte désactivé
-    0xFC8E, // menu_bg : rose pastel pour le fond du menu
-    0x4083, // menu_border : rose vif pour le contour du menu
-    0xD69A, // menu_hdr : rose gold pour l'en-tête du menu
-    0xC8EB, // menu_item : lavande douce pour les items du menu
-    0xFC8E, // menu_hl_bg : rouge vif pour le fond de sélection
-    0xF808, // menu_hl_text : rose gold pour le texte sélectionné
-    0xC8EB, // menu_param : rose gold pour les paramètres du menu
-    0xF808, // freq_text : rose gold pour le texte de fréquence
-    0xF808, // funit_text : lavande douce pour l'unité de fréquence
-    0xF808, // rds_text : lavande douce pour le texte RDS
-    0xF808, // scale_text : rose gold pour le texte de l'échelle
-    0xC8C2, // scale_pointer : rose vif pour le pointeur de l'échelle
-    0xC9AB, // scale_line : rose vif pour la ligne de l'échelle
+    0xFC8E, // bg
+    0xF808, // text
+    0xBAF1, // text_muted
+    0xF800, // text_warn
+    0xF808, // smeter_icon
+    0xF808, // smeter_bar
+    0xB08D, // smeter_bar_plus
+    0xD889, // save_icon
+    0xD889, // batt_voltage
+    0x4083, // batt_border
+    0xE00B, // batt_full
+    0xE000, // batt_low
+    0xC8F1, // batt_charge
+    0xD69A, // batt_icon
+    0xE00B, // band_text
+    0xFFFF, // mode_text
+    0x4083, // mode_border
+    0xFC8E, // box_bg
+    0xFC8E, // box_border
+    0xF808, // box_text
+    0xFC8E, // box_off_bg
+    0xFFFF, // box_off_text
+    0xFC8E, // menu_bg
+    0x4083, // menu_border
+    0xD69A, // menu_hdr
+    0xC8EB, // menu_item
+    0xFC8E, // menu_hl_bg
+    0xF808, // menu_hl_text
+    0xC8EB, // menu_param
+    0xF808, // freq_text
+    0xF808, // funit_text
+    0xF808, // rds_text
+    0xF808, // scale_text
+    0xC8C2, // scale_pointer
+    0xC9AB, // scale_line
   }
 
 };
