@@ -369,22 +369,22 @@ const ColorTheme theme[] = {
 
 {
     "Girly",
-    0xF6B2, // bg : rose pastel pour le fond
-    0xD69A, // text : rose gold pour le texte principal
-    0xB4B4, // text_muted : lavande douce pour le texte atténué
+    0xB4B1, // bg : rose pastel pour le fond
+    0xD10C, // text : rose gold pour le texte principal
+    0xBAF1, // text_muted : lavande douce pour le texte atténué
     0xF800, // text_warn : rouge vif pour les avertissements
-    0xB4B4, // smeter_icon : lavande douce pour l'icône du smètre
-    0xB4B4, // smeter_bar : lavande douce pour la barre du smètre
-    0xD69A, // smeter_bar_plus : rose gold pour la partie complémentaire du smètre
-    0xE73C, // save_icon : rose vif pour l'icône de sauvegarde
-    0xB4B4, // batt_voltage : lavande douce pour l'indicateur de tension de batterie
-    0xD69A, // batt_border : rose gold pour le contour de la batterie
-    0xB4B4, // batt_full : lavande douce indiquant une batterie pleine
-    0xF800, // batt_low : rouge vif pour signaler une batterie faible
-    0xF6B2, // batt_charge : rose pastel pour l'état de charge
+    0xB08D, // smeter_icon : lavande douce pour l'icône du smètre
+    0xB08D, // smeter_bar : lavande douce pour la barre du smètre
+    0xB08D, // smeter_bar_plus : rose gold pour la partie complémentaire du smètre
+    0xD889, // save_icon : rose vif pour l'icône de sauvegarde
+    0xD889, // batt_voltage : lavande douce pour l'indicateur de tension de batterie
+    0x4083, // batt_border : rose gold pour le contour de la batterie
+    0x4083, // batt_full : lavande douce indiquant une batterie pleine
+    0x4083, // batt_low : rouge vif pour signaler une batterie faible
+    0xC8F1, // batt_charge : rose pastel pour l'état de charge
     0xD69A, // batt_icon : rose gold pour l'icône de batterie
-    0xB4B4, // band_text : lavande douce pour le texte de la bande
-    0xB4B4, // mode_text : lavande douce pour le texte du mode
+    0xC8EB, // band_text : lavande douce pour le texte de la bande
+    0xC8EB, // mode_text : lavande douce pour le texte du mode
     0xB4B4, // mode_border : lavande douce pour le contour du mode
     0xF6B2, // box_bg : rose pastel pour le fond des boîtes
     0xB4B4, // box_border : lavande douce pour le contour des boîtes
@@ -394,16 +394,16 @@ const ColorTheme theme[] = {
     0xF6B2, // menu_bg : rose pastel pour le fond du menu
     0xE73C, // menu_border : rose vif pour le contour du menu
     0xD69A, // menu_hdr : rose gold pour l'en-tête du menu
-    0xB4B4, // menu_item : lavande douce pour les items du menu
+    0xC8EB, // menu_item : lavande douce pour les items du menu
     0xF800, // menu_hl_bg : rouge vif pour le fond de sélection
-    0xD69A, // menu_hl_text : rose gold pour le texte sélectionné
-    0xD69A, // menu_param : rose gold pour les paramètres du menu
-    0xD69A, // freq_text : rose gold pour le texte de fréquence
-    0xB4B4, // funit_text : lavande douce pour l'unité de fréquence
-    0xB4B4, // rds_text : lavande douce pour le texte RDS
-    0xD69A, // scale_text : rose gold pour le texte de l'échelle
-    0xE73C, // scale_pointer : rose vif pour le pointeur de l'échelle
-    0xE73C, // scale_line : rose vif pour la ligne de l'échelle
+    0xC8EB, // menu_hl_text : rose gold pour le texte sélectionné
+    0xC8EB, // menu_param : rose gold pour les paramètres du menu
+    0xC8EB, // freq_text : rose gold pour le texte de fréquence
+    0xC8EB, // funit_text : lavande douce pour l'unité de fréquence
+    0xC8EB, // rds_text : lavande douce pour le texte RDS
+    0xC8E8, // scale_text : rose gold pour le texte de l'échelle
+    0xC8C2, // scale_pointer : rose vif pour le pointeur de l'échelle
+    0xC9AB, // scale_line : rose vif pour la ligne de l'échelle
   }
 
 };
