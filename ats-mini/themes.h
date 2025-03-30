@@ -369,7 +369,7 @@ const ColorTheme theme[] = {
 
 {
     "Girly",
-    0xE24B, // bg : rose pastel pour le fond
+    0xFC8E, // bg : rose pastel pour le fond
     0xF808, // text : rose gold pour le texte principal
     0xBAF1, // text_muted : lavande douce pour le texte atténué
     0xF800, // text_warn : rouge vif pour les avertissements
@@ -383,19 +383,19 @@ const ColorTheme theme[] = {
     0xE000, // batt_low : rouge vif pour signaler une batterie faible
     0xC8F1, // batt_charge : rose pastel pour l'état de charge
     0xD69A, // batt_icon : rose gold pour l'icône de batterie
-    0xF808, // band_text : lavande douce pour le texte de la bande
-    0xF808, // mode_text : lavande douce pour le texte du mode
+    0xE00B, // band_text : lavande douce pour le texte de la bande
+    0xFFFF, // mode_text : lavande douce pour le texte du mode
     0x4083, // mode_border : lavande douce pour le contour du mode
-    0xE24B, // box_bg : rose pastel pour le fond des boîtes
-    0x4083, // box_border : lavande douce pour le contour des boîtes
+    0xFC8E, // box_bg : rose pastel pour le fond des boîtes
+    0xFC8E, // box_border : lavande douce pour le contour des boîtes
     0xF808, // box_text : lavande douce pour le texte dans les boîtes
-    0xF800, // box_off_bg : rouge vif pour les boîtes désactivées
+    0xFC8E, // box_off_bg : rouge vif pour les boîtes désactivées
     0xFFFF, // box_off_text : rose gold pour le texte désactivé
-    0xE24B, // menu_bg : rose pastel pour le fond du menu
+    0xFC8E, // menu_bg : rose pastel pour le fond du menu
     0x4083, // menu_border : rose vif pour le contour du menu
     0xD69A, // menu_hdr : rose gold pour l'en-tête du menu
     0xC8EB, // menu_item : lavande douce pour les items du menu
-    0xB4B4, // menu_hl_bg : rouge vif pour le fond de sélection
+    0xFC8E, // menu_hl_bg : rouge vif pour le fond de sélection
     0xF808, // menu_hl_text : rose gold pour le texte sélectionné
     0xC8EB, // menu_param : rose gold pour les paramètres du menu
     0xF808, // freq_text : rose gold pour le texte de fréquence
