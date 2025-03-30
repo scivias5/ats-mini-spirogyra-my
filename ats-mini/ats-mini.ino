@@ -8,6 +8,7 @@
 #include <SI4735.h>
 #include "Rotary.h"              // Disabled half-step mode
 #include "patch_init.h"          // SSB patch for whole SSBRX initialization string
+#include "LLPIXEL324pt7b.h"      //Font
 
 
 // =================================
@@ -641,7 +642,7 @@ void setup()
   spr.createSprite(320,170);
   spr.setTextDatum(MC_DATUM);
   spr.setSwapBytes(true);
-  spr.setFreeFont(&Orbitron_Light_24);
+  spr.setFreeFont(&LLPIXEL324pt7b);
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
 
   // TFT display brightness control (PWM)
