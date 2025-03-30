@@ -1960,7 +1960,7 @@ void drawMenu() {
       spr.fillRoundRect(6+menu_offset_x,24+menu_offset_y+(2*16),66+menu_delta_x,16,2,theme[themeIdx].menu_bg);
       // rx.getAutomaticGainControl();             // G8PTN: Read back value is not used
       if (agcNdx == 0 && agcIdx == 0) {
-        spr.setFreeFont(&Orbitron_Light_24);
+        spr.setFreeFont(&LLPIXEL324pt7b);
         spr.drawString("AGC",40+menu_offset_x+(menu_delta_x/2),48+menu_offset_y);
         spr.drawString("On",40+menu_offset_x+(menu_delta_x/2),72+menu_offset_y);
         spr.setTextFont(0);
@@ -2054,7 +2054,7 @@ void drawSprite()
     spr.drawString("Goshante, G8PTN (Dave), R9UCL (Max Arnold)", 2, 33 + 16 * 5, 2);
   } else {
     // Band and mode
-    spr.setFreeFont(&Orbitron_Light_24);
+    spr.setFreeFont(&LLPIXEL324pt7b);
     spr.setTextDatum(TC_DATUM);
     spr.setTextColor(theme[themeIdx].band_text, theme[themeIdx].bg);
     uint16_t band_width = spr.drawString(band[bandIdx].bandName, band_offset_x, band_offset_y);
