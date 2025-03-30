@@ -2191,13 +2191,13 @@ void drawSprite()
       }
 
       spr.setTextDatum(TC_DATUM);
+      spr.setFreeFont(&Technology12pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       
 #if THEME_EDITOR
       
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
-      spr.setFreeFont(&Technology12pt7b);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
 #endif
     }
