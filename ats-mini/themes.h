@@ -326,10 +326,10 @@ const ColorTheme theme[] = {
     0x07AD, // scale_text
     0x5CF2, // scale_pointer
     0x2364, // scale_line
-  }
+  },
 
  {
-"Winamp",
+    "Winamp",
     0x0000, // bg : fond noir pour rappeler l’obscurité du skin Winamp
     0xFFFF, // text : texte blanc pour un bon contraste
     0x7BEF, // text_muted : gris bleuté pour les textes secondaires
@@ -367,7 +367,8 @@ const ColorTheme theme[] = {
     0xFFFF, // scale_line : blanc pour la ligne de l’échelle
   },
 
-"Girly",
+{
+    "Girly",
     0xF6B2, // bg : rose pastel pour le fond
     0xD69A, // text : rose gold pour le texte principal
     0xB4B4, // text_muted : lavande douce pour le texte atténué
