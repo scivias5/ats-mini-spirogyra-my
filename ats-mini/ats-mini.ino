@@ -8,7 +8,8 @@
 #include <SI4735.h>
 #include "Rotary.h"              // Disabled half-step mode
 #include "patch_init.h"          // SSB patch for whole SSBRX initialization string
-#include "poxel_font16pt7b.h"      //Font
+#include "poxel_font16pt7b.h"      //Font1
+#include "Technology12pt7b.h"      //Font2
 
 
 // =================================
@@ -2190,6 +2191,7 @@ void drawSprite()
       }
 
       spr.setTextDatum(TC_DATUM);
+      spr.setFreeFont(&Technology12pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
       
