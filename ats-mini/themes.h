@@ -336,18 +336,18 @@ const ColorTheme theme[] = {
     0xE68A, // text_warn : rouge vif pour les alertes et avertissements
     0xE68A, // smeter_icon : bleu pour rappeler les accents lumineux
     0xF3A6, // smeter_bar : bleu pour une cohérence graphique
-    0xF3A6, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
+    0xFA80, // smeter_bar_plus : blanc pour mettre en évidence certains niveaux
     0xE68A, // save_icon : magenta, mélange de rouge et de bleu, pour un look rétro
     0x7789, // batt_voltage : gris bleuté pour l’indicateur de tension
     0x0000, // batt_border : magenta pour souligner le contour
-    0x7789, // batt_full : gris bleuté indiquant une batterie pleine
-    0xCEBB, // batt_low : rouge vif pour signaler une batterie faible
+    0xFF96, // batt_full : gris bleuté indiquant une batterie pleine
+    0xF801, // batt_low : rouge vif pour signaler une batterie faible
     0x0000, // batt_charge : noir, afin de garder l’homogénéité du fond
     0xFFFF, // batt_icon : blanc pour l’icône de batterie
     0x7789, // band_text : gris bleuté pour le texte de la bande
     0x7789, // mode_text : gris bleuté pour le mode d’affichage
     0x73D2, // mode_border : gris bleuté pour le contour du mode
-    0x39CB, // box_bg : fond noir pour les zones de contenu
+    0x2127, // box_bg : fond noir pour les zones de contenu
     0x73D2, // box_border : gris bleuté pour délimiter les boîtes
     0xFFFF, // box_text : texte blanc à l’intérieur des boîtes
     0xF800, // box_off_bg : rouge vif pour signaler les zones désactivées
@@ -359,7 +359,7 @@ const ColorTheme theme[] = {
     0xF3A6, // menu_hl_bg : rouge vif pour le surlignage des éléments sélectionnés
     0x31E9, // menu_hl_text : texte blanc sur fond surligné
     0x6F08, // menu_param : blanc pour les paramètres du menu
-    0xBD4C, // freq_text : blanc pour le texte de fréquence
+    0xFF23, // freq_text : blanc pour le texte de fréquence
     0x6F08, // funit_text : gris bleuté pour l’unité de fréquence
     0x6F08, // rds_text : gris bleuté pour le texte RDS
     0xD6DB, // scale_text : blanc pour le texte de l’échelle
