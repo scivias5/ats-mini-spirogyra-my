@@ -83,6 +83,11 @@
 #define batt_offset_y    0    // Battery meter y offset
 #define clock_datum     90    // Clock x offset
 
+// Stereo (or mono) mode indicator.
+#define MODE_OFFSET_X             290
+#define MODE_OFFSET_Y              90
+#define MODE_RADIUS                 8
+
 // Battery Monitoring
 #define BATT_ADC_READS          10  // ADC reads for average calculation (Maximum value = 16 to avoid rollover in average calculation)
 #define BATT_ADC_FACTOR      1.702  // ADC correction factor used for the battery monitor
@@ -2010,6 +2015,18 @@ void drawMenu() {
   }
 }
 
+/* Draw stereo indicator. */
+void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r, uint16_t color_stereo, uint16_t color_mono, boolean stereo) {
+      if (stereo) {
+        // Stereo: two intertwined circles.
+        spr.drawSmoothCircle(x - r/2, y, r, color_stereo, TFT_BLACK);
+        spr.drawSmoothCircle(x + r/2, y, r, color_stereo, TFT_BLACK);
+      }
+      else {
+        // Mono: one white circle.
+        spr.drawSmoothCircle(x, y, r, color_mono, TFT_BLACK);
+      }
+}
 
 void drawSprite()
 {
@@ -2184,6 +2201,10 @@ void drawSprite()
       }
     }
 
+    //Icone Stereo
+    if (settings.mode == FM) {
+      drawStereoIndicator(MODE_OFFSET_X, MODE_OFFSET_Y, MODE_RADIUS, TFT_RED, TFT_WHITE, rx.getCurrentPilot());
+      
     // RDS info
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
