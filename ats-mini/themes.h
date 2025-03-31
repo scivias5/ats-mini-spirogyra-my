@@ -354,10 +354,10 @@ const ColorTheme theme[] = {
     0xFFFF, // box_off_text
     0x2927, // menu_bg
     0x2927, // menu_border
-    0x6F48, // menu_hdr
+    0xE68A, // menu_hdr
     0xFFFF, // menu_item
     0x2927, // menu_hl_bg
-    0x31E9, // menu_hl_text
+    0xF3A6, // menu_hl_text
     0x7789, // menu_param
     0xFF23, // freq_text
     0x6F08, // funit_text
