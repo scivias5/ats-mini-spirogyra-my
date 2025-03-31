@@ -355,7 +355,7 @@ const ColorTheme theme[] = {
     0x2927, // menu_bg
     0x2927, // menu_border
     0x6F48, // menu_hdr
-    0x7BEF, // menu_item
+    0xFFFF, // menu_item
     0x2927, // menu_hl_bg
     0x31E9, // menu_hl_text
     0x7789, // menu_param
