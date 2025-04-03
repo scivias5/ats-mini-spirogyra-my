@@ -2285,11 +2285,19 @@ void cleanBfoRdsInfo()
   bufferStationName[0]='\0';
 }
 
-void showRDSMsg()
-{
-  rdsMsg[35] = bufferRdsMsg[35] = '\0';
-  if (strcmp(bufferRdsMsg, rdsMsg) == 0)
-    return;
+void showRDSMsg() {
+  // Assurez-vous que la chaîne est correctement terminée (ici, on impose une longueur max de 35 caractères)
+  rdsMsg[35] = '\0';
+  
+  // Positionner le texte au centre (TC_DATUM) et définir la couleur selon votre thème
+  spr.setTextDatum(TC_DATUM);
+  spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+  
+  // Affiche le texte aux coordonnées définies par rds_offset_x et rds_offset_y
+  spr.drawString(rdsMsg, rds_offset_x, rds_offset_y, 4);
+  
+  // Envoyer le sprite sur l'écran
+  spr.pushSprite(0, 0);
 }
 
 void showRDSStation()
@@ -2316,7 +2324,8 @@ void checkRDS()
       rdsMsg = rx.getRdsText2A();
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
-      if ( rdsMsg != NULL )   showRDSMsg();
+      if ( rdsMsg != NULL )   
+        showRDSMsg();
       if (stationName != NULL)
           showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
