@@ -2220,10 +2220,9 @@ void drawSprite()
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
-      spr.drawString(bufferRdsMsg, 40 + rds_offset_x, rds_o
+      spr.drawString(bufferRdsMsg, rds_offset_x, rds_offset_y, 4);
 #endif
     }
-
 
     if (isCB()) {
       spr.setTextDatum(TC_DATUM);
