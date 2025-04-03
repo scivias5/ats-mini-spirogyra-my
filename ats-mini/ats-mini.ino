@@ -2219,12 +2219,10 @@ void drawSprite()
 #if THEME_EDITOR
       
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
+      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y);
       else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
-#endif
-      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y);
-    else
-      spr.drawString(bufferrdsMsg, rds_offset_x, rds_offset_y);
+      spr.drawString(bufferrdsMsg, 40 + rds_offset_x, rds_offset_y);
 #endif
     }
 
