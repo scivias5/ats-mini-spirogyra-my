@@ -549,7 +549,7 @@ char *rdsMsg;
 char *stationName;
 char *rdsTime;
 char bufferStationName[50];
-char bufferRdsMsg[30];
+char bufferRdsMsg[100];
 char bufferRdsTime[32];
 
 uint8_t rssi = 0;
@@ -2235,9 +2235,9 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      spr.drawString("*MESSAGE*", rdsmess_offset_x, rds_offset_y, 4);
+      spr.drawString("*MSG*", rdsmess_offset_x, rdsmess_offset_y, 4);
 #else
-      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y, 4);
 #endif
     }
 
