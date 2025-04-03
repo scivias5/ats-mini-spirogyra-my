@@ -84,8 +84,8 @@
 #define clock_datum     90    // Clock x offset
 
 // Stereo (or mono) mode indicator.
-#define MODE_OFFSET_X             290
-#define MODE_OFFSET_Y              90
+#define MODE_OFFSET_X             280
+#define MODE_OFFSET_Y              80
 #define MODE_RADIUS                 8
 
 // Battery Monitoring
