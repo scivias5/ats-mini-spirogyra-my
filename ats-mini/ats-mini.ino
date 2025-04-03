@@ -2326,11 +2326,9 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       if ( rdsMsg != NULL )
-        spr.setFreeFont(&Matrix_Complex_NC8pt7b);
-      showRDSMsg();
+        showRDSMsg();
       if (stationName != NULL)
-        
-          showRDSStation();
+        showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
     }
   }
