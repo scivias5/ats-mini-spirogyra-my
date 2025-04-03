@@ -2228,6 +2228,7 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferRdsMsg, 40 + rds_offset_x, rds_offset_y, 4)
     }
 
     // Tuner scale
