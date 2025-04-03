@@ -2016,7 +2016,7 @@ void drawMenu() {
 }
 
 /* Draw stereo indicator. */
-void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r) {
+void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r, uint16_t Ster_icon, uint16_t Ster_icon, boolean stereo) {
       if (stereo) {
         // Stereo: two intertwined circles.
         spr.drawSmoothCircle(x - r/2, y, r, theme[themeIdx].Ster_icon);
