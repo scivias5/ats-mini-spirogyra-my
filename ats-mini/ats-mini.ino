@@ -2020,11 +2020,11 @@ void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r, uint16_t color_ster
       if (stereo) {
         // Stereo: two intertwined circles.
         spr.drawSmoothCircle(x - r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
-        spr.drawSmoothCircle(x + r/2, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
+        spr.drawSmoothCircle(x + r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
       }
       else {
         // Mono: one white circle.
-        spr.drawSmoothCircle(x, y, r, color_mono, TFT_BLACK);
+        spr.drawSmoothCircle(x, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
       }
 }
 
