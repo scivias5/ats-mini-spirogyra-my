@@ -2224,22 +2224,6 @@ void drawSprite()
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
 #endif
     }
-    
-    
-    // RDS Message
-    if (currentMode == FM) {
-      if (rx.getCurrentPilot()) {
-        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
-      }
-
-      spr.setTextDatum(TC_DATUM);
-      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-#if THEME_EDITOR
-      spr.drawString("*MSG*", rdsmess_offset_x, rdsmess_offset_y, 4);
-#else
-      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y, 4);
-#endif
-    }
 
     if (isCB()) {
       spr.setTextDatum(TC_DATUM);
