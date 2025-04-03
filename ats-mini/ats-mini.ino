@@ -263,6 +263,8 @@ bool pb1_long_released = false;         // Push button long released
 
 bool display_on = true;                 // Display state
 
+int rdsScrollIndex = 0;  //Scrolling text
+
 // Status bar icon flags
 bool screen_toggle = false;             // Toggle when drawsprite is called
 bool eeprom_wr_flag = false;            // Flag indicating EEPROM write request
@@ -2286,20 +2288,56 @@ void cleanBfoRdsInfo()
   bufferStationName[0]='\0';
 }
 
-void showRDSMsg() {
-  // Assurez-vous que la chaîne est correctement terminée (ici, on impose une longueur max de 35 caractères)
-  rdsMsg[20] = '\0';
-  
-  // Positionner le texte au centre (TC_DATUM) et définir la couleur selon votre thème
-  spr.setTextDatum(TC_DATUM);
-  spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
-  // Affiche le texte aux coordonnées définies par rds_offset_x et rds_offset_y
-  spr.drawString(rdsMsg, rdsmess_offset_x, rdsmess_offset_y, 4);
+void displayScrollingRDSMsg() {
+  const int displayLen = 25;
+  if (rdsMsg == NULL) return;
+  int msgLen = strlen(rdsMsg);
+  if (msgLen <= 0) return;
   
+  // Construire une chaîne temporaire de 25 caractères qui défile
+  
+  char scrollingBuffer[displayLen + 1];  // +1 pour le caractère nul (\0)
+  for (int i = 0; i < displayLen; i++) 
+  {
+    scrollingBuffer[i] = rdsMsg[(rdsScrollIndex + i) % msgLen];
+  }
+  scrollingBuffer[displayLen] = '\0'; // Terminer correctement la chaîne
+  
+  spr.setFreeFont(&Matrix_Complex_NC8pt7b);
+  // Définir le point d'ancrage (ici centré horizontalement)
+  spr.setTextDatum(TC_DATUM);
+  // Définir la couleur du texte et de l'arrière-plan à partir du thème
+  spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+  
+  // Afficher la chaîne défilante aux coordonnées souhaitées
+  // Ici on utilise rds_offset_x et rds_offset_y, qui sont déjà définis dans votre code
+  spr.drawString(scrollingBuffer, rdsmess_offset_x, rdsmess_offset_y, 4);
   // Envoyer le sprite sur l'écran
   spr.pushSprite(0, 0);
 }
+
+// Fonction d'update à appeler périodiquement pour faire défiler le message
+void updateScrollingRDS() 
+{
+  static unsigned long lastScrollTime = 0;
+  // Par exemple, on met à jour toutes les 300 ms (ajustez la valeur selon vos besoins)
+  if (millis() - lastScrollTime > 300) {
+    lastScrollTime = millis();
+    rdsScrollIndex++;
+    
+    // Pour éviter un débordement, on remet à zéro dès que l'on a parcouru tout le message
+    int msgLen = strlen(rdsMsg);
+  if (msgLen > 0) {
+    rdsScrollIndex %= msgLen;
+    }
+  }
+}
+
+
+
+
+
 
 void showRDSStation()
 {
@@ -3229,7 +3267,14 @@ void loop() {
     seekModePress = false;
     pb1_released = pb1_short_released = pb1_long_released = false;
   }
+  
+  
+  //Scrolling RDSmsg
+  updateScrollingRDS();
+  displayScrollingRDSMsg();
 
+
+  
   // Periodically refresh the main screen
   // This covers the case where there is nothing else triggering a refresh
   if ((millis() - background_timer) > BACKGROUND_REFRESH_TIME) {
