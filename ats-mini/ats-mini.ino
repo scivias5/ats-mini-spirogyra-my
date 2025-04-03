@@ -77,7 +77,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   155    // RDS horizontal offset
+#define rds_offset_x   150    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2220,6 +2220,7 @@ void drawSprite()
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferRdsMsg, 40 + rds_offset_x, rds_o
 #endif
     }
 
@@ -2228,7 +2229,6 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
-      spr.drawString(bufferRdsMsg, 40 + rds_offset_x, rds_offset_y, 4)
     }
 
     // Tuner scale
