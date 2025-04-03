@@ -74,8 +74,8 @@ const ColorTheme theme[] = {
     0xF800, // batt_low
     0x001F, // batt_charge
     0xFFE0, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0xFFFF, // Ster_icon
+    0xFFFF, // Mono_icon
     0xD69A, // band_text
     0xD69A, // mode_text
     0xD69A, // mode_border
@@ -115,8 +115,8 @@ const ColorTheme theme[] = {
     0xF800, // batt_low
     0x001F, // batt_charge
     0xFFE0, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0xFFFF, // Ster_icon
+    0xFFFF, // Mono_icon
     0xD69A, // band_text
     0xD69A, // mode_text
     0xD69A, // mode_border
@@ -156,8 +156,8 @@ const ColorTheme theme[] = {
     0x3A08, // batt_low
     0xC616, // batt_charge
     0x3A08, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0x3A08, // Ster_icon
+    0x3A08, // Mono_icon
     0x3A08, // band_text
     0x632C, // mode_text
     0x632C, // mode_border
@@ -197,8 +197,8 @@ const ColorTheme theme[] = {
     0x00C2, // batt_low
     0x4309, // batt_charge
     0x00C2, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0x00C2, // Ster_icon
+    0x00C2, // Mono_icon
     0x00C2, // band_text
     0x00C2, // mode_text
     0x00C2, // mode_border
@@ -238,8 +238,8 @@ const ColorTheme theme[] = {
     0x2945, // batt_low
     0xF3C1, // batt_charge
     0x18C3, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0x18C3, // Ster_icon
+    0x18C3, // Mono_icon
     0x18C3, // band_text
     0x2945, // mode_text
     0x2945, // mode_border
@@ -279,8 +279,8 @@ const ColorTheme theme[] = {
     0xF800, // batt_low
     0x0000, // batt_charge
     0xF800, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0xB925, // Ster_icon
+    0xB925, // Mono_icon
     0xB925, // band_text
     0xB925, // mode_text
     0xB925, // mode_border
@@ -320,8 +320,8 @@ const ColorTheme theme[] = {
     0x0309, // batt_low
     0x0060, // batt_charge
     0x07AD, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0x052D, // Ster_icon
+    0x052D, // Mono_icon
     0x052D, // band_text
     0x052D, // mode_text
     0x052D, // mode_border
@@ -402,10 +402,10 @@ const ColorTheme theme[] = {
     0xE000, // batt_low
     0xC8F1, // batt_charge
     0xD69A, // batt_icon
-    0xFF23, // Ster_icon
-    0xFF23, // Mono_icon
+    0xE00B, // Ster_icon
+    0xE00B, // Mono_icon
     0xE00B, // band_text
-    0xFFFF, // mode_text
+    0xE00B, // mode_text
     0x4083, // mode_border
     0xFC8E, // box_bg
     0xFC8E, // box_border
