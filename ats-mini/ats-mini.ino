@@ -77,15 +77,15 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   165    // RDS horizontal offset
+#define rds_offset_x   155    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
 #define clock_datum     90    // Clock x offset
 
 // Stereo (or mono) mode indicator.
-#define MODE_OFFSET_X             280
-#define MODE_OFFSET_Y              80
+#define MODE_OFFSET_X             270
+#define MODE_OFFSET_Y              75
 #define MODE_RADIUS                 8
 
 // Battery Monitoring
@@ -2219,10 +2219,10 @@ void drawSprite()
 #if THEME_EDITOR
       
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
-      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y);
+      //spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y);
       else
-      //spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
-      spr.drawString(bufferrdsMsg, rds_offset_x, rds_offset_y);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
+      //spr.drawString(bufferrdsMsg, rds_offset_x, rds_offset_y);
 #endif
     }
 
