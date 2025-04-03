@@ -21,6 +21,9 @@ typedef struct {
   uint16_t batt_charge;
   uint16_t batt_icon;
 
+  uint16_t Ster_icon;
+  uint16_t Mono_icon;
+
   uint16_t band_text;
 
   uint16_t mode_text;
@@ -344,6 +347,8 @@ const ColorTheme theme[] = {
     0xF801, // batt_low
     0x0000, // batt_charge
     0xFFFF, // batt_icon
+    0xFF23, // Ster_icon
+    0xFF23, // Mono_icon
     0x7789, // band_text
     0x7789, // mode_text
     0x73D2, // mode_border
