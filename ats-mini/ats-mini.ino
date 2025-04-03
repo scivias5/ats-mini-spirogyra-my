@@ -2292,6 +2292,7 @@ void showRDSMsg() {
   // Positionner le texte au centre (TC_DATUM) et définir la couleur selon votre thème
   spr.setTextDatum(TC_DATUM);
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+  spr.setFreeFont(&poxel_font16pt7b);
   
   // Affiche le texte aux coordonnées définies par rds_offset_x et rds_offset_y
   spr.drawString(rdsMsg, rds_offset_x, rds_offset_y, 4);
