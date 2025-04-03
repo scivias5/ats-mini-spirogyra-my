@@ -2288,10 +2288,9 @@ void cleanBfoRdsInfo()
 
 void showRDSMsg() {
   // Assurez-vous que la chaîne est correctement terminée (ici, on impose une longueur max de 35 caractères)
-  rdsMsg[35] = '\0';
+  rdsMsg[20] = '\0';
   
   // Positionner le texte au centre (TC_DATUM) et définir la couleur selon votre thème
-  spr.setFreeFont(&Matrix_Complex_NC8pt7b);
   spr.setTextDatum(TC_DATUM);
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
@@ -2326,9 +2325,11 @@ void checkRDS()
       rdsMsg = rx.getRdsText2A();
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
-      if ( rdsMsg != NULL )   
-        showRDSMsg();
+      if ( rdsMsg != NULL )
+        spr.setFreeFont(&Matrix_Complex_NC8pt7b);
+      showRDSMsg();
       if (stationName != NULL)
+        
           showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
     }
