@@ -77,8 +77,12 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   150    // RDS horizontal offset
+#define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
+
+#define rds_offset_x   165    // RDSmessage horizontal offset
+#define rds_offset_y    94    // RDSmessage vertical offset
+
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
 #define clock_datum     90    // Clock x offset
@@ -545,7 +549,7 @@ char *rdsMsg;
 char *stationName;
 char *rdsTime;
 char bufferStationName[50];
-char bufferRdsMsg[100];
+char bufferRdsMsg[30];
 char bufferRdsTime[32];
 
 uint8_t rssi = 0;
