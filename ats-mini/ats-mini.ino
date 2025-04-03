@@ -85,7 +85,7 @@
 
 // Stereo (or mono) mode indicator.
 #define MODE_OFFSET_X             270
-#define MODE_OFFSET_Y              75
+#define MODE_OFFSET_Y              80
 #define MODE_RADIUS                 8
 
 // Battery Monitoring
@@ -2216,15 +2216,13 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       
-#if THEME_EDITOR
-      
-      spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
-      //spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y);
-      else
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
-      //spr.drawString(bufferrdsMsg, rds_offset_x, rds_offset_y);
-#endif
-    }
+if THEME_EDITOR
+      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
+      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y, 4);
+else
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferRdsMsg, 60 + rds_offset_x, rds_offset_y, 4);
+      end if
 
 
     if (isCB()) {
@@ -2318,7 +2316,7 @@ void checkRDS()
       rdsMsg = rx.getRdsText2A();
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
-      // if ( rdsMsg != NULL )   showRDSMsg();
+      if ( rdsMsg != NULL )   showRDSMsg();
       if (stationName != NULL)
           showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
