@@ -10,6 +10,7 @@
 #include "patch_init.h"          // SSB patch for whole SSBRX initialization string
 #include "poxel_font16pt7b.h"      //Font1
 #include "Technology12pt7b.h"      //Font2
+#include "Matrix_Complex_NC8pt7b.h"      //Font3
 
 
 // =================================
@@ -80,8 +81,8 @@
 #define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 
-#define rdsmess_offset_x   200    // RDSmessage horizontal offset
-#define rdsmess_offset_y    94    // RDSmessage vertical offset
+#define rdsmess_offset_x   165    // RDSmessage horizontal offset
+#define rdsmess_offset_y    120    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2290,12 +2291,12 @@ void showRDSMsg() {
   rdsMsg[35] = '\0';
   
   // Positionner le texte au centre (TC_DATUM) et définir la couleur selon votre thème
+  spr.setFreeFont(&Matrix_Complex_NC8pt7b);
   spr.setTextDatum(TC_DATUM);
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-  spr.setFreeFont(&poxel_font16pt7b);
-  
+
   // Affiche le texte aux coordonnées définies par rds_offset_x et rds_offset_y
-  spr.drawString(rdsMsg, rds_offset_x, rds_offset_y, 4);
+  spr.drawString(rdsMsg, rdsmess_offset_x, rdsmess_offset_y, 4);
   
   // Envoyer le sprite sur l'écran
   spr.pushSprite(0, 0);
