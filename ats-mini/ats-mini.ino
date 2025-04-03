@@ -80,8 +80,8 @@
 #define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 
-#define rds_offset_x   165    // RDSmessage horizontal offset
-#define rds_offset_y    94    // RDSmessage vertical offset
+#define rdsmess_offset_x   200    // RDSmessage horizontal offset
+#define rdsmess_offset_y    94    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -714,7 +714,7 @@ void setup()
 
   cleanBfoRdsInfo();
 
-  delay(300);
+  delay(100);
 
   // Audio Amplifier Enable. G8PTN: Added
   // After the SI4732 has been setup, enable the audio amplifier
@@ -2216,18 +2216,28 @@ void drawSprite()
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setFreeFont(&Technology12pt7b);
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-      
 #if THEME_EDITOR
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+#endif
+    }
+    
+    
+    // RDS Message
+    if (currentMode == FM) {
+      if (rx.getCurrentPilot()) {
+        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+      }
+
+      spr.setTextDatum(TC_DATUM);
+      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y, 4);
+      spr.drawString("*MESSAGE*", rdsmess_offset_x, rds_offset_y, 4);
 #else
-      spr.drawString(bufferRdsMsg, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rds_offset_y, 4);
 #endif
     }
 
