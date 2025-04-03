@@ -2216,13 +2216,12 @@ void drawSprite()
       spr.setTextDatum(TC_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       
-      if THEME_EDITOR
+#if THEME_EDITOR
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
-      spr.drawString("*MESSAGE*", rds_offset_x, rds_offset_y, 4);
-      else
+#else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
-      spr.drawString(bufferRdsMsg, 60 + rds_offset_x, rds_offset_y, 4);
-      end if
+#endif
+    }
 
 
     if (isCB()) {
