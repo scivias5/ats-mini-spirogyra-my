@@ -2291,8 +2291,8 @@ void cleanBfoRdsInfo()
 
 void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maximum 
   rdsMsg[35] = '\0'; bufferRdsMsg[35] = '\0'; // Si le message affiché est identique à celui reçu, on ne fait rien 
-  if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
-    return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
+  //if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
+    //return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
   spr.setTextDatum(TL_DATUM);
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
@@ -2304,8 +2304,8 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
 
 void showRDSStation() { // On suppose ici que le nom de la station fait au maximum 15 caractères 
   stationName[15] = '\0'; bufferStationName[15] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
-  if (strcmp(bufferStationName, stationName) == 0) 
-    return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
+  //if (strcmp(bufferStationName, stationName) == 0) 
+    //return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   spr.setTextDatum(TL_DATUM);
   spr.setFreeFont(&Technology12pt7b);
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
