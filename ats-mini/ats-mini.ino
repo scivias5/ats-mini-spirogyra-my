@@ -81,7 +81,7 @@
 #define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 
-#define rdsmess_offset_x   165    // RDSmessage horizontal offset
+#define rdsmess_offset_x     20    // RDSmessage horizontal offset
 #define rdsmess_offset_y    120    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
@@ -2294,7 +2294,6 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
   if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
   return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
   strcpy(bufferRdsMsg, rdsMsg);
-  spr.fillSprite(theme[themeIdx].bg); spr.setTextDatum(TL_DATUM); 
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
   spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
@@ -2303,12 +2302,11 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
 
 
 void showRDSStation() { // On suppose ici que le nom de la station fait au maximum 15 caractères 
-  stationName[15] = '\0'; bufferStationName[15] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
+  stationName[8] = '\0'; bufferStationName[8] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
   if (strcmp(bufferStationName, stationName) == 0) return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   strcpy(bufferStationName, stationName);
-  spr.fillSprite(theme[themeIdx].bg); 
   spr.setTextDatum(TL_DATUM); 
-  spr.setFreeFont(&Matrix_Complex_NC8pt7b); 
+  spr.setFreeFont(&Technology12pt7b); 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
   spr.drawString(bufferStationName, rds_offset_x, rds_offset_y + 30); spr.pushSprite(0, 0); }
 
