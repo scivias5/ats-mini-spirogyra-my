@@ -2223,7 +2223,7 @@ void drawSprite()
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setTextDatum(TC_DATUM);
+      spr.setTextDatum(TL_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
@@ -2309,22 +2309,22 @@ void showRDSStation()
   drawSprite();
 }
 
-void showRDSTime()
-{
-  if (strcmp(bufferRdsTime, rdsTime) == 0)
-    return;
+//void showRDSTime()
+//{
+//  if (strcmp(bufferRdsTime, rdsTime) == 0)
+//    return;
 
-  if (snr < 12) return; // Do not synchronize if the signal is weak
+//  if (snr < 12) return; // Do not synchronize if the signal is weak
 
   // Copy new RDS time to buffer
-  strcpy(bufferRdsTime, rdsTime);
+//  strcpy(bufferRdsTime, rdsTime);
   
   // Synchronize internal time with RDS time
-  syncTimeFromRDS(rdsTime);
+//  syncTimeFromRDS(rdsTime);
   
   // Display updated time (optional)
-  drawSprite();
-}
+//  drawSprite();
+//}
 
 void checkRDS()
 {
