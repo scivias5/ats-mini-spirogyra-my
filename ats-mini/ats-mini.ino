@@ -3,14 +3,14 @@
 // =================================
 
 #include <Wire.h>
-#include <TFT_eSPI.h>            // https://github.com/Xinyuan-LilyGO/T-Display-S3#quick-start
+#include <TFT_eSPI.h>               // https://github.com/Xinyuan-LilyGO/T-Display-S3#quick-start
 #include "EEPROM.h"
 #include <SI4735.h>
-#include "Rotary.h"              // Disabled half-step mode
-#include "patch_init.h"          // SSB patch for whole SSBRX initialization string
-#include "poxel_font16pt7b.h"      //Font1
-#include "Technology12pt7b.h"      //Font2
-#include "Matrix_Complex_NC8pt7b.h"      //Font3
+#include "Rotary.h"                // Disabled half-step mode
+#include "patch_init.h"            // SSB patch for whole SSBRX initialization string
+#include "poxel_font16pt7b.h"      //Font1 Band
+#include "Technology8pt7b.h"       //Font2 RDS Station
+#include "Matrix_Complex_NC8pt7b.h"      //Font3 RDS Message
 
 
 // =================================
@@ -78,7 +78,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   320    // RDS horizontal offset
+#define rds_offset_x   315    // RDS horizontal offset
 #define rds_offset_y   130    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
@@ -2217,14 +2217,14 @@ void drawSprite()
 
 
     
-// RDS info
+// RDS Station
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setTextDatum(BR_DATUM);
-      spr.setFreeFont(&Technology12pt7b);
+      spr.setTextDatum(BC_DATUM);
+      spr.setFreeFont(&Technology8pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
