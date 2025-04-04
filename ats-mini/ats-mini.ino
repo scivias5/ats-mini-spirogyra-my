@@ -2219,19 +2219,19 @@ void drawSprite()
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setTextDatum(TC_DATUM);
+      spr.setTextDatum(TL_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
+      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 1);
 #else
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
 #endif
     }
 
     if (isCB()) {
-      spr.setTextDatum(TC_DATUM);
+      spr.setTextDatum(TL_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
     }
 
     // Tuner scale
@@ -2283,10 +2283,6 @@ void drawSprite()
 }
 
 
-void cleanBfoRdsInfo()
-{
-  bufferStationName[0]='\0';
-}
 
 
 void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maximum 
@@ -2294,11 +2290,11 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
   if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
     return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
   strcpy(bufferRdsMsg, rdsMsg);
-  spr.setTextDatum(ML_DATUM);
+  spr.setTextDatum(TL_DATUM);
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
   spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
-  //spr.pushSprite(0, 0); 
+  spr.pushSprite(0, 0); 
 }
 
 
@@ -2308,11 +2304,11 @@ void showRDSStation() { // On suppose ici que le nom de la station fait au maxim
   if (strcmp(bufferStationName, stationName) == 0) 
     return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   strcpy(bufferStationName, stationName);
-  spr.setTextDatum(ML_DATUM);
-  spr.setFreeFont(&Technology12pt7b); 
+  spr.setTextDatum(TL_DATUM);
+  spr.setFreeFont(&Technology12pt7b);
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
   spr.drawString(bufferStationName, rds_offset_x, rds_offset_y); 
-  //spr.pushSprite(0, 0); 
+  spr.pushSprite(0, 0); 
 }
 
 void showRDSTime()
@@ -2339,6 +2335,13 @@ void checkRDS()
     }
   }
 }
+
+void cleanBfoRdsInfo()
+{
+  bufferStationName[0]='\0';
+}
+
+
 
 void checkCBChannel()
 {
