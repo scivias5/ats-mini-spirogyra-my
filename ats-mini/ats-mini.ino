@@ -2219,8 +2219,8 @@ void drawSprite()
     
 // RDS info
     if (currentMode == FM) {
-      if (rx.getCurrentPilot()) {
-        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+      //if (rx.getCurrentPilot()) {
+        //spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
       spr.setTextDatum(TL_DATUM);
