@@ -78,11 +78,11 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   165    // RDS horizontal offset
-#define rds_offset_y    94    // RDS vertical offset
+#define rds_offset_x   90    // RDS horizontal offset
+#define rds_offset_y    95    // RDS vertical offset
 
-#define rdsmess_offset_x    90    // RDSmessage horizontal offset
-#define rdsmess_offset_y    100    // RDSmessage vertical offset
+#define rdsmess_offset_x   105    // RDSmessage horizontal offset
+#define rdsmess_offset_y    1    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2219,19 +2219,19 @@ void drawSprite()
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setTextDatum(TL_DATUM);
-      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+      //spr.setTextDatum(TL_DATUM);
+      //spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 1);
+      //spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 1);
 #else
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
+      //spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
 #endif
     }
 
     if (isCB()) {
       spr.setTextDatum(TL_DATUM);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
     }
 
     // Tuner scale
