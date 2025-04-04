@@ -3233,13 +3233,6 @@ void loop() {
     pb1_released = pb1_short_released = pb1_long_released = false;
   }
   
-  
-  //Scrolling RDSmsg
-  updateScrollingRDS();
-  displayScrollingRDSMsg();
-
-
-  
   // Periodically refresh the main screen
   // This covers the case where there is nothing else triggering a refresh
   if ((millis() - background_timer) > BACKGROUND_REFRESH_TIME) {
