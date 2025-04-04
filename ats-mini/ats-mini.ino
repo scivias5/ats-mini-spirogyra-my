@@ -2226,16 +2226,10 @@ void drawSprite()
       spr.setTextDatum(TL_DATUM);
       spr.setFreeFont(&Matrix_Complex_NC8pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-#if THEME_EDITOR
-      spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
-#else
+      //spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
-
-#if THEME_EDITOR
-      spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
-#else
+      //spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
       spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
-#endif
     }
 
     
