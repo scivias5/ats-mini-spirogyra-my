@@ -10,7 +10,7 @@
 #include "patch_init.h"            // SSB patch for whole SSBRX initialization string
 #include "poxel_font16pt7b.h"      //Font1 Band
 #include "Technology8pt7b.h"       //Font2 RDS Station
-#include "Matrix_Complex_NC8pt7b.h"      //Font3 RDS Message
+#include "PixelOperator8p.h"      //Font3 RDS Message
 
 
 // =================================
@@ -2233,7 +2233,7 @@ void drawSprite()
 // RDS message
     if (currentMode == FM) {
       spr.setTextDatum(TL_DATUM);
-      spr.setFreeFont(&Matrix_Complex_NC8pt7b);
+      spr.setFreeFont(&PixelOperator8p);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
       spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
