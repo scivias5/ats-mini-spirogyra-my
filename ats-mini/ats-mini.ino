@@ -81,7 +81,7 @@
 #define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 
-#define rdsmess_offset_x    100    // RDSmessage horizontal offset
+#define rdsmess_offset_x    280    // RDSmessage horizontal offset
 #define rdsmess_offset_y    120    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
