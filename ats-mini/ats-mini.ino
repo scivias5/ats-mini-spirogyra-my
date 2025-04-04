@@ -2216,7 +2216,7 @@ void drawSprite()
     // RDS info
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
-        ""spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+        //spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
         spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
       }
 
