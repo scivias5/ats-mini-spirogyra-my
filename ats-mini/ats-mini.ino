@@ -78,11 +78,11 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   150    // RDS horizontal offset
-#define rds_offset_y    95    // RDS vertical offset
+#define rds_offset_x   165    // RDS horizontal offset
+#define rds_offset_y    94    // RDS vertical offset
 
-#define rdsmess_offset_x   90    // RDSmessage horizontal offset
-#define rdsmess_offset_y   105    // RDSmessage vertical offset
+#define rdsmess_offset_x   165    // RDS message horizontal offset
+#define rdsmess_offset_y    94    // RDS message vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2337,43 +2337,13 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       
-      if ( rdsMsg != NULL )   
-        showRDSMsg();
+      // if ( rdsMsg != NULL )   showRDSMsg();
       if (stationName != NULL)
-        showRDSStation();
-      //if (rdsTime != NULL) 
-      //  showRDSTime();
+          showRDSStation();
+      if (rdsTime != NULL) showRDSTime();
     }
   }
 }
-
-
-
-
-void checkRDS()
-{
-  rx.getRdsStatus();
-  if (rx.getRdsReceived())
-  {
-    if (rx.getRdsSync() && rx.getRdsSyncFound())
-    {
-      rdsMsg = rx.getRdsText2A();
-      stationName = rx.getRdsText0A();
-      rdsTime = rx.getRdsTime();
-      
-      if ( rdsMsg != NULL )   
-        showRDSMsg();
-      if (stationName != NULL)
-        showRDSStation();
-      //if (rdsTime != NULL) showRDSTime();
-    }
-  }
-}
-
-
-
-
-
 
 
 void checkCBChannel()
@@ -3252,7 +3222,7 @@ void loop() {
   }
 
   if ((millis() - lastRDSCheck) > RDS_CHECK_TIME) {
-    if ((currentMode == FM) and (snr >= 12)) checkRDS();
+    if ((currentMode == FM) and (snr >= 10)) checkRDS();
     lastRDSCheck = millis();
   }
 
