@@ -2224,7 +2224,7 @@ void drawSprite()
       }
 
       spr.setTextDatum(BR_DATUM);
-      spr.setFreeFont(&Matrix_Complex_NC8pt7b);
+      spr.setFreeFont(&Technology12pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
@@ -2233,7 +2233,7 @@ void drawSprite()
 // RDS message
     if (currentMode == FM) {
       spr.setTextDatum(TL_DATUM);
-      spr.setFreeFont(&Technology12pt7b);
+      spr.setFreeFont(&Matrix_Complex_NC8pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
       spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
