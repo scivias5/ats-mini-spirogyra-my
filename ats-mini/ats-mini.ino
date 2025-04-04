@@ -78,11 +78,11 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   165    // RDS horizontal offset
-#define rds_offset_y    94    // RDS vertical offset
+#define rds_offset_x   80    // RDS horizontal offset
+#define rds_offset_y    95    // RDS vertical offset
 
-#define rdsmess_offset_x   165    // RDS message horizontal offset
-#define rdsmess_offset_y    94    // RDS message vertical offset
+#define rdsmess_offset_x   80    // RDS message horizontal offset
+#define rdsmess_offset_y    95    // RDS message vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2224,11 +2224,17 @@ void drawSprite()
       }
 
       spr.setTextDatum(TL_DATUM);
+      spr.setFreeFont(&Matrix_Complex_NC8pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
+      spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
 #else
-      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
+
+#if THEME_EDITOR
+      spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
+#else
+      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
 #endif
     }
 
