@@ -2337,10 +2337,11 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       
-      // if ( rdsMsg != NULL )   showRDSMsg();
+      if ( rdsMsg != NULL )   
+        showRDSMsg();
       if (stationName != NULL)
-          showRDSStation();
-      if (rdsTime != NULL) showRDSTime();
+        showRDSStation();
+      //if (rdsTime != NULL) showRDSTime();
     }
   }
 }
