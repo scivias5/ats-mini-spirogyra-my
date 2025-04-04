@@ -2328,8 +2328,8 @@ void checkRDS()
       rdsTime = rx.getRdsTime();
       if ( rdsMsg != NULL )
         showRDSMsg();
-      if (stationName != NULL)
-        showRDSStation();
+      //if (stationName != NULL)
+      //  showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
     }
   }
