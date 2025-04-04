@@ -2364,6 +2364,7 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       if ( rdsMsg != NULL )
+        updateScrollingRDS() 
         displayScrollingRDSMsg();
       if (stationName != NULL)
         showRDSStation();
