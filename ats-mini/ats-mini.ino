@@ -78,7 +78,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   90    // RDS horizontal offset
+#define rds_offset_x   150    // RDS horizontal offset
 #define rds_offset_y    95    // RDS vertical offset
 
 #define rdsmess_offset_x   90    // RDSmessage horizontal offset
@@ -2217,7 +2217,7 @@ void drawSprite()
 
 
     
-    // RDS info
+// RDS info
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
@@ -2289,8 +2289,6 @@ void drawSprite()
 }
 
 
-
-
 void cleanBfoRdsInfo()
 {
   bufferStationName[0]='\0';
@@ -2301,18 +2299,52 @@ void showRDSMsg()
   rdsMsg[35] = bufferRdsMsg[35] = '\0';
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
+}
+
+void showRDSStation()
+{
+  if (strcmp(bufferStationName, stationName) == 0 ) return;
   cleanBfoRdsInfo();
   strcpy(bufferStationName, stationName);
   drawSprite();
 }
 
-void showRDSStation()
+void showRDSTime()
 {
-  if (strcmp(bufferStationName, stationName) == 0 ) 
+  if (strcmp(bufferRdsTime, rdsTime) == 0)
     return;
-  cleanBfoRdsInfo();
-  strcpy(bufferStationName, stationName);
+
+  if (snr < 12) return; // Do not synchronize if the signal is weak
+
+  // Copy new RDS time to buffer
+  strcpy(bufferRdsTime, rdsTime);
+  
+  // Synchronize internal time with RDS time
+  syncTimeFromRDS(rdsTime);
+  
+  // Display updated time (optional)
   drawSprite();
+}
+
+void checkRDS()
+{
+  rx.getRdsStatus();
+  if (rx.getRdsReceived())
+  {
+    if (rx.getRdsSync() && rx.getRdsSyncFound())
+    {
+      rdsMsg = rx.getRdsText2A();
+      stationName = rx.getRdsText0A();
+      rdsTime = rx.getRdsTime();
+      
+      if ( rdsMsg != NULL )   
+        showRDSMsg();
+      if (stationName != NULL)
+        showRDSStation();
+      //if (rdsTime != NULL) 
+      //  showRDSTime();
+    }
+  }
 }
 
 
