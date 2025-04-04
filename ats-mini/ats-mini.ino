@@ -2214,18 +2214,18 @@ void drawSprite()
       }
       
     // RDS info
-    if (currentMode == FM) {
-      if (rx.getCurrentPilot()) {
-        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
-      }
+//    if (currentMode == FM) {
+//      if (rx.getCurrentPilot()) {
+//        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+//      }
 
-      spr.setTextDatum(TC_DATUM);
-      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-#if THEME_EDITOR
+//      spr.setTextDatum(TC_DATUM);
+//      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+//#if THEME_EDITOR
       spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
-#else
+//#else
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
-#endif
+//#endif
     }
 
     if (isCB()) {
@@ -2305,10 +2305,10 @@ void showRDSStation() { // On suppose ici que le nom de la station fait au maxim
   stationName[8] = '\0'; bufferStationName[8] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
   if (strcmp(bufferStationName, stationName) == 0) return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   strcpy(bufferStationName, stationName);
-  spr.setTextDatum(TL_DATUM); 
   spr.setFreeFont(&Technology12pt7b); 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
-  spr.drawString(bufferStationName, rds_offset_x, rds_offset_y + 30); spr.pushSprite(0, 0); }
+  spr.drawString(bufferStationName, rds_offset_x, rds_offset_y); 
+  spr.pushSprite(0, 0); }
 
 void showRDSTime()
 {
