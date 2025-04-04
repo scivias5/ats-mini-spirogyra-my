@@ -2289,63 +2289,28 @@ void cleanBfoRdsInfo()
 }
 
 
-void displayScrollingRDSMsg() {
-  const int displayLen = 25;
-  if (rdsMsg == NULL) return;
-  int msgLen = strlen(rdsMsg);
-  if (msgLen <= 0) return;
-  
-  // Construire une chaîne temporaire de 25 caractères qui défile
-  
-  char scrollingBuffer[displayLen + 1];  // +1 pour le caractère nul (\0)
-  for (int i = 0; i < displayLen; i++) 
-  {
-    scrollingBuffer[i] = rdsMsg[(rdsScrollIndex + i) % msgLen];
-  }
-  scrollingBuffer[displayLen] = '\0'; // Terminer correctement la chaîne
-  
-  spr.setFreeFont(&Matrix_Complex_NC8pt7b);
-  // Définir le point d'ancrage (ici centré horizontalement)
-  spr.setTextDatum(TC_DATUM);
-  // Définir la couleur du texte et de l'arrière-plan à partir du thème
-  spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-  
-  // Afficher la chaîne défilante aux coordonnées souhaitées
-  // Ici on utilise rds_offset_x et rds_offset_y, qui sont déjà définis dans votre code
-  spr.drawString(scrollingBuffer, rdsmess_offset_x, rdsmess_offset_y, 4);
-  // Envoyer le sprite sur l'écran
-  spr.pushSprite(0, 0);
-}
-
-// Fonction d'update à appeler périodiquement pour faire défiler le message
-void updateScrollingRDS() 
-{
-  static unsigned long lastScrollTime = 0;
-  // Par exemple, on met à jour toutes les 300 ms (ajustez la valeur selon vos besoins)
-  if (millis() - lastScrollTime > 300) {
-    lastScrollTime = millis();
-    rdsScrollIndex++;
-    
-    // Pour éviter un débordement, on remet à zéro dès que l'on a parcouru tout le message
-    int msgLen = strlen(rdsMsg);
-  if (msgLen > 0) {
-    rdsScrollIndex %= msgLen;
-    }
-  }
-}
+void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maximum 
+  rdsMsg[35] = '\0'; bufferRdsMsg[35] = '\0'; // Si le message affiché est identique à celui reçu, on ne fait rien 
+  if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
+  return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
+  strcpy(bufferRdsMsg, rdsMsg);
+  spr.fillSprite(theme[themeIdx].bg); spr.setTextDatum(TL_DATUM); 
+  spr.setFreeFont(&TMatrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
+  spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
+  spr.drawString(bufferRdsMsg, rdsMESS_offset_x, rdsMESS_offset_y); 
+  spr.pushSprite(0, 0); }
 
 
 
-
-
-
-void showRDSStation()
-{
-  if (strcmp(bufferStationName, stationName) == 0 ) return;
-  cleanBfoRdsInfo();
+void showRDSStation() { // On suppose ici que le nom de la station fait au maximum 15 caractères 
+  stationName[15] = '\0'; bufferStationName[15] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
+  if (strcmp(bufferStationName, stationName) == 0) return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   strcpy(bufferStationName, stationName);
-  drawSprite();
-}
+  spr.fillSprite(theme[themeIdx].bg); 
+  spr.setTextDatum(TL_DATUM); 
+  spr.setFreeFont(&Matrix_Complex_NC8pt7b); 
+  spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
+  spr.drawString(bufferStationName, rds_offset_x, rds_offset_y + 30); spr.pushSprite(0, 0); }
 
 void showRDSTime()
 {
@@ -2364,8 +2329,7 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       if ( rdsMsg != NULL )
-        updateScrollingRDS() 
-        displayScrollingRDSMsg();
+        showRDSMsg()
       if (stationName != NULL)
         showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
