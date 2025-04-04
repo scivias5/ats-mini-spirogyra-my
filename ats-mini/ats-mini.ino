@@ -2332,7 +2332,7 @@ void checkRDS()
       if ( rdsMsg != NULL )   
         showRDSMsg();
       if (stationName != NULL)
-        howRDSStation();
+        showRDSStation();
       //if (rdsTime != NULL) showRDSTime();
     }
   }
