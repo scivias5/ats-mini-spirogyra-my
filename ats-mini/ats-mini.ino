@@ -2216,7 +2216,7 @@ void drawSprite()
     // RDS info
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
-        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+        ""spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
         spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
       }
 
@@ -2283,7 +2283,10 @@ void drawSprite()
 
 }
 
-
+void cleanBfoRdsInfo()
+{
+  bufferStationName[0]='\0';
+}
 
 
 void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maximum 
@@ -2301,7 +2304,7 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
 
 
 void showRDSStation() { // On suppose ici que le nom de la station fait au maximum 15 caractères 
-  stationName[8] = '\0'; bufferStationName[8] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
+  stationName[15] = '\0'; bufferStationName[15] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
   if (strcmp(bufferStationName, stationName) == 0) 
     return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
   strcpy(bufferStationName, stationName);
@@ -2336,13 +2339,6 @@ void checkRDS()
     }
   }
 }
-
-void cleanBfoRdsInfo()
-{
-  bufferStationName[0]='\0';
-}
-
-
 
 void checkCBChannel()
 {
