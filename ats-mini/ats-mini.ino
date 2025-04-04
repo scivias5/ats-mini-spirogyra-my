@@ -81,8 +81,8 @@
 #define rds_offset_x   165    // RDS horizontal offset
 #define rds_offset_y    94    // RDS vertical offset
 
-#define rdsmess_offset_x    280    // RDSmessage horizontal offset
-#define rdsmess_offset_y    120    // RDSmessage vertical offset
+#define rdsmess_offset_x    165    // RDSmessage horizontal offset
+#define rdsmess_offset_y    100    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2294,6 +2294,7 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
   if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
   return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
   strcpy(bufferRdsMsg, rdsMsg);
+  spr.setTextDatum(ML_DATUM);
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
   spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
