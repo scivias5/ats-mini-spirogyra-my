@@ -79,9 +79,9 @@
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
 #define rds_offset_x   320    // RDS horizontal offset
-#define rds_offset_y   140    // RDS vertical offset
+#define rds_offset_y   130    // RDS vertical offset
 
-#define rdsmess_offset_x   96    // RDS message horizontal offset
+#define rdsmess_offset_x   98    // RDS message horizontal offset
 #define rdsmess_offset_y   92    // RDS message vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
