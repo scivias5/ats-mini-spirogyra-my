@@ -2217,6 +2217,7 @@ void drawSprite()
     if (currentMode == FM) {
       if (rx.getCurrentPilot()) {
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+        spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
       }
 
       //spr.setTextDatum(TL_DATUM);
@@ -2294,7 +2295,7 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
   spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
-  //spr.pushSprite(0, 0); 
+  spr.pushSprite(0, 0); 
 }
 
 
@@ -2308,7 +2309,7 @@ void showRDSStation() { // On suppose ici que le nom de la station fait au maxim
   spr.setFreeFont(&Technology12pt7b);
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
   spr.drawString(bufferStationName, rds_offset_x, rds_offset_y); 
-  //spr.pushSprite(0, 0); 
+  spr.pushSprite(0, 0); 
 }
 
 void showRDSTime()
