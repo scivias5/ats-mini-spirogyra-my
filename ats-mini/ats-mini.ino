@@ -81,8 +81,8 @@
 #define rds_offset_x   90    // RDS horizontal offset
 #define rds_offset_y    95    // RDS vertical offset
 
-#define rdsmess_offset_x   105    // RDSmessage horizontal offset
-#define rdsmess_offset_y    1    // RDSmessage vertical offset
+#define rdsmess_offset_x   90    // RDSmessage horizontal offset
+#define rdsmess_offset_y   105    // RDSmessage vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2294,7 +2294,7 @@ void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maxi
   spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
   spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
-  spr.pushSprite(0, 0); 
+  //spr.pushSprite(0, 0); 
 }
 
 
@@ -2308,7 +2308,7 @@ void showRDSStation() { // On suppose ici que le nom de la station fait au maxim
   spr.setFreeFont(&Technology12pt7b);
   spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
   spr.drawString(bufferStationName, rds_offset_x, rds_offset_y); 
-  spr.pushSprite(0, 0); 
+  //spr.pushSprite(0, 0); 
 }
 
 void showRDSTime()
