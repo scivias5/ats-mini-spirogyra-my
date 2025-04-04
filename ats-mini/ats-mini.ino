@@ -2329,7 +2329,7 @@ void checkRDS()
       stationName = rx.getRdsText0A();
       rdsTime = rx.getRdsTime();
       if ( rdsMsg != NULL )
-        showRDSMsg()
+        showRDSMsg();
       if (stationName != NULL)
         showRDSStation();
       // if ( rdsTime != NULL ) showRDSTime();
