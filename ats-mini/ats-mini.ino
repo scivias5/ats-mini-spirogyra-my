@@ -2208,94 +2208,31 @@ void drawSprite()
       }
     }
 
-
-
-
-
-
-
-void showRDSMsg() { // On force la terminaison de chaîne à 35 caractères maximum 
-  rdsMsg[35] = '\0'; bufferRdsMsg[35] = '\0'; // Si le message affiché est identique à celui reçu, on ne fait rien 
-  if (strcmp(bufferRdsMsg, rdsMsg) == 0) 
-    return; // Sinon, on met à jour le buffer et on affiche le nouveau message 
-  strcpy(bufferRdsMsg, rdsMsg);
-  spr.setTextDatum(TL_DATUM);
-  spr.setFreeFont(&Matrix_Complex_NC8pt7b); // Choisissez la police souhaitée 
-  spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg); 
-  spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y); 
-  spr.pushSprite(0, 0); 
-}
-
-
-
-
-void showRDSStation() { // On suppose ici que le nom de la station fait au maximum 15 caractères 
-  stationName[15] = '\0'; bufferStationName[15] = '\0'; // Si le nom affiché est identique à celui reçu, on ne fait rien 
-  if (strcmp(bufferStationName, stationName) == 0) 
-    return; // Sinon, on met à jour le buffer et on affiche le nouveau nom 
-  strcpy(bufferStationName, stationName);
-  spr.setTextDatum(TL_DATUM);
-  spr.setFreeFont(&Technology12pt7b);
-  spr.setTextColor(theme[themeIdx].text, theme[themeIdx].bg);
-  spr.drawString(bufferStationName, rds_offset_x, rds_offset_y); 
-  spr.pushSprite(0, 0); 
-}
-
-void showRDSTime()
-{
-  if (strcmp(bufferRdsTime, rdsTime) == 0)
-    return;
-}
-
-void checkRDS()
-{
-  rx.getRdsStatus();
-  if (rx.getRdsReceived())
-  {
-    if (rx.getRdsSync() && rx.getRdsSyncFound())
-    {
-      rdsMsg = rx.getRdsText2A();
-      stationName = rx.getRdsText0A();
-      rdsTime = rx.getRdsTime();
-      if ( rdsMsg != NULL )
-        showRDSMsg();
-      if (stationName != NULL)
-        showRDSStation();
-      // if ( rdsTime != NULL ) showRDSTime();
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
     
     //Icone Stereo
     if (currentMode == FM) 
     {
       drawStereoIndicator(MODE_OFFSET_X, MODE_OFFSET_Y, MODE_RADIUS, TFT_RED, TFT_WHITE, rx.getCurrentPilot());
     }
-      
-    // RDS info
-   // if (currentMode == FM) {
-   //   if (rx.getCurrentPilot()) {
-   //     //spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
-   //     spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
-    //  }
 
-      //spr.setTextDatum(TL_DATUM);
-      //spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+
+    
+    // RDS info
+    if (currentMode == FM) {
+      if (rx.getCurrentPilot()) {
+        spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
+      }
+
+      spr.setTextDatum(TC_DATUM);
+      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 #if THEME_EDITOR
-      //spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 1);
+      spr.drawString("*STATION*", rds_offset_x, rds_offset_y, 4);
 #else
-      //spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 1);
+      spr.drawString(bufferStationName, rds_offset_x, rds_offset_y, 4);
 #endif
     }
+
+    
 
     if (isCB()) {
       spr.setTextDatum(TL_DATUM);
@@ -2351,10 +2288,61 @@ void checkRDS()
 
 }
 
+
+
+
 void cleanBfoRdsInfo()
 {
   bufferStationName[0]='\0';
 }
+
+void showRDSMsg()
+{
+  rdsMsg[35] = bufferRdsMsg[35] = '\0';
+  if (strcmp(bufferRdsMsg, rdsMsg) == 0)
+    return;
+  cleanBfoRdsInfo();
+  strcpy(bufferStationName, stationName);
+  drawSprite();
+}
+
+void showRDSStation()
+{
+  if (strcmp(bufferStationName, stationName) == 0 ) 
+    return;
+  cleanBfoRdsInfo();
+  strcpy(bufferStationName, stationName);
+  drawSprite();
+}
+
+
+
+
+void checkRDS()
+{
+  rx.getRdsStatus();
+  if (rx.getRdsReceived())
+  {
+    if (rx.getRdsSync() && rx.getRdsSyncFound())
+    {
+      rdsMsg = rx.getRdsText2A();
+      stationName = rx.getRdsText0A();
+      rdsTime = rx.getRdsTime();
+      
+      if ( rdsMsg != NULL )   
+        showRDSMsg();
+      if (stationName != NULL)
+        howRDSStation();
+      //if (rdsTime != NULL) showRDSTime();
+    }
+  }
+}
+
+
+
+
+
+
 
 void checkCBChannel()
 {
