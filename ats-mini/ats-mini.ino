@@ -2024,12 +2024,12 @@ void drawMenu() {
 void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r, uint16_t color_stereo, uint16_t color_mono, boolean stereo) {
       if (stereo) {
         // Stereo: two intertwined circles.
-        spr.drawCircle(x - r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
-        spr.drawCircle(x + r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
+        spr.drawSmoothCircle(x - r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
+        spr.drawSmoothCircle(x + r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
       }
       else {
         // Mono: one white circle.
-        spr.drawCircle(x, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
+        spr.drawSmoothCircle (x, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
       }
 }
 
