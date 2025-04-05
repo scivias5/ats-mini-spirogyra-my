@@ -16,9 +16,10 @@ Changes:
 
 * Added Winamp theme
 * Added Girly theme
-* Changed font for Band and MHz text
+* Changed font for Band and MHz text 
 * Added circular stereo/mono logo https://github.com/m2608/ats_mini
 * Adjusted FM frequency limit for Europe
+* Adjusted RDS Station and On RDS message / New Fonts
 
 
 ## Releases
