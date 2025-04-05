@@ -78,7 +78,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   315    // RDS horizontal offset
+#define rds_offset_x   250    // RDS horizontal offset
 #define rds_offset_y   80    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
@@ -90,7 +90,7 @@
 
 // Stereo (or mono) mode indicator.
 #define MODE_OFFSET_X             100
-#define MODE_OFFSET_Y               5
+#define MODE_OFFSET_Y              15
 #define MODE_RADIUS                 8
 
 // Battery Monitoring
@@ -2223,7 +2223,7 @@ void drawSprite()
         spr.fillRect(15 + meter_offset_x, 7+meter_offset_y, 4*17, 2, theme[themeIdx].bg);
       }
 
-      spr.setTextDatum(BC_DATUM);
+      spr.setTextDatum(MR_DATUM);
       spr.setFreeFont(&Technology8pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
