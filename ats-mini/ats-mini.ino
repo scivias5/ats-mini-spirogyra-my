@@ -2515,7 +2515,7 @@ void batteryMonitor() {
     spr.fillTriangle(batt_offset_x + 9 + 5, batt_offset_y + 1 + 6, batt_offset_x + 9 + 10, batt_offset_y + 1 + 6, batt_offset_x + 9 + 3, batt_offset_y + 1 + 13, theme[themeIdx].batt_icon);
     spr.fillRect(batt_offset_x + 9 + 1, batt_offset_y + 1 + 6, 9, 2, theme[themeIdx].batt_icon);
     spr.drawPixel(batt_offset_x + 9 + 3, batt_offset_y + 1 + 12, theme[themeIdx].batt_icon);
-//} 
+  } 
   //  else {
   //  char voltage[8];
   //  spr.fillRoundRect(batt_offset_x + 2, batt_offset_y + 3, chargeLevel, 10, 2, batteryLevelColor);
