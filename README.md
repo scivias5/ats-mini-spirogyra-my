@@ -1,6 +1,6 @@
 # ATS Mini
 
-![](docs/source/_static/Spirogyra_Winamp_theme.png)
+![](docs/source/_static/Spirogyra_Winamp_theme.jpg)
 
 This firmware is for use on the SI4732 (ESP32-S3) Mini/Pocket Receiver
 
