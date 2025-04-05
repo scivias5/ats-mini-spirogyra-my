@@ -82,7 +82,7 @@
 #define rds_offset_y    70    // RDS vertical offset
 
 #define rdsmess_offset_x   100    // RDS message horizontal offset
-#define rdsmess_offset_y    94    // RDS message vertical offset
+#define rdsmess_offset_y    100    // RDS message vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2237,21 +2237,21 @@ if (currentMode == FM) {
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
   // Préparation des buffers pour deux lignes (25 caractères + 1 pour le '\0')
-  char line1[36];
-  char line2[36];
+  char line1[31];
+  char line2[31];
 
   // Copie des 25 premiers caractères dans line1
-  strncpy(line1, bufferRdsMsg, 35);
-  line1[35] = '\0'; // Assurez-vous de terminer la chaîne
+  strncpy(line1, bufferRdsMsg, 30);
+  line1[30] = '\0'; // Assurez-vous de terminer la chaîne
 
   // Calcul de la longueur totale de bufferRdsMsg
   int len = strlen(bufferRdsMsg);
   
-if (len > 35) 
+if (len > 30) 
 {
     // Copie des caractères suivants jusqu'à 25 caractères dans line2
-    strncpy(line2, bufferRdsMsg + 35, 35);
-    line2[35] = '\0';
+    strncpy(line2, bufferRdsMsg + 30, 30);
+    line2[30] = '\0';
   } 
 else {
     line2[0] = '\0'; // Si le message ne dépasse pas 25 caractères
@@ -2332,7 +2332,7 @@ void cleanBfoRdsInfo()
 
 void showRDSMsg()
 {
-  rdsMsg[35] = bufferRdsMsg[35] = '\0';
+  rdsMsg[50] = bufferRdsMsg[50] = '\0';
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
     cleanBfoRdsInfo();
