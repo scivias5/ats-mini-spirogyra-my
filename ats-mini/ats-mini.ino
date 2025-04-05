@@ -78,7 +78,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   310    // RDS horizontal offset
+#define rds_offset_x   315    // RDS horizontal offset
 #define rds_offset_y    70    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
