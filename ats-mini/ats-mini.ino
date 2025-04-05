@@ -2231,13 +2231,38 @@ void drawSprite()
     }
 
 // RDS message
-    if (currentMode == FM) {
-      spr.setTextDatum(TL_DATUM);
-      spr.setFreeFont(&PixelOperator8pt7b);
-      spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
-      //spr.drawString("*RDSMSG*", rdsmess_offset_x, rdsmess_offset_y);
-      spr.drawString(bufferRdsMsg, rdsmess_offset_x, rdsmess_offset_y);
-    }
+if (currentMode == FM) {
+  spr.setTextDatum(TL_DATUM);
+  spr.setFreeFont(&Matrix_Complex_NC8pt7b);
+  spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
+
+  // Préparation des buffers pour deux lignes (25 caractères + 1 pour le '\0')
+  char line1[26];
+  char line2[26];
+
+  // Copie des 25 premiers caractères dans line1
+  strncpy(line1, bufferRdsMsg, 25);
+  line1[25] = '\0'; // Assurez-vous de terminer la chaîne
+
+  // Calcul de la longueur totale de bufferRdsMsg
+  int len = strlen(bufferRdsMsg);
+  if (len > 25) {
+    // Copie des caractères suivants jusqu'à 25 caractères dans line2
+    strncpy(line2, bufferRdsMsg + 25, 25);
+    line2[25] = '\0';
+  } else {
+    line2[0] = '\0'; // Si le message ne dépasse pas 25 caractères
+  }
+
+  // Affichage de la première ligne
+  spr.drawString(line1, rdsmess_offset_x, rdsmess_offset_y);
+
+  // Affichage de la deuxième ligne avec un décalage vertical, si elle n'est pas vide
+  if (strlen(line2) > 0) {
+    int lineSpacing = 20; // Ajustez cette valeur en fonction de la hauteur de la police
+    spr.drawString(line2, rdsmess_offset_x, rdsmess_offset_y + lineSpacing);
+  }
+}
 
     
 
