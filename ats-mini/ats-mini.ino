@@ -2246,11 +2246,14 @@ if (currentMode == FM) {
 
   // Calcul de la longueur totale de bufferRdsMsg
   int len = strlen(bufferRdsMsg);
-  if (len > 25) {
+  
+if (len > 25) 
+{
     // Copie des caractères suivants jusqu'à 25 caractères dans line2
     strncpy(line2, bufferRdsMsg + 25, 25);
     line2[25] = '\0';
-  } else {
+  } 
+else {
     line2[0] = '\0'; // Si le message ne dépasse pas 25 caractères
   }
 
@@ -2258,7 +2261,8 @@ if (currentMode == FM) {
   spr.drawString(line1, rdsmess_offset_x, rdsmess_offset_y);
 
   // Affichage de la deuxième ligne avec un décalage vertical, si elle n'est pas vide
-  if (strlen(line2) > 0) {
+  if (strlen(line2) > 0) 
+  {
     int lineSpacing = 20; // Ajustez cette valeur en fonction de la hauteur de la police
     spr.drawString(line2, rdsmess_offset_x, rdsmess_offset_y + lineSpacing);
   }
