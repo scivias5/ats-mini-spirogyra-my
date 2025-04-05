@@ -79,7 +79,7 @@
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
 #define rds_offset_x   315    // RDS horizontal offset
-#define rds_offset_y   130    // RDS vertical offset
+#define rds_offset_y   80    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
 #define rdsmess_offset_y   92    // RDS message vertical offset
@@ -89,8 +89,8 @@
 #define clock_datum     90    // Clock x offset
 
 // Stereo (or mono) mode indicator.
-#define MODE_OFFSET_X             270
-#define MODE_OFFSET_Y              80
+#define MODE_OFFSET_X             100
+#define MODE_OFFSET_Y               5
 #define MODE_RADIUS                 8
 
 // Battery Monitoring
