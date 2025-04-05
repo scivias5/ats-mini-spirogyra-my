@@ -2237,21 +2237,21 @@ if (currentMode == FM) {
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
   // Préparation des buffers pour deux lignes (25 caractères + 1 pour le '\0')
-  char line1[31];
-  char line2[31];
+  char line1[36];
+  char line2[36];
 
   // Copie des 25 premiers caractères dans line1
-  strncpy(line1, bufferRdsMsg, 30);
-  line1[30] = '\0'; // Assurez-vous de terminer la chaîne
+  strncpy(line1, bufferRdsMsg, 35);
+  line1[35] = '\0'; // Assurez-vous de terminer la chaîne
 
   // Calcul de la longueur totale de bufferRdsMsg
   int len = strlen(bufferRdsMsg);
   
-if (len > 30) 
+if (len > 35) 
 {
     // Copie des caractères suivants jusqu'à 25 caractères dans line2
-    strncpy(line2, bufferRdsMsg + 30, 30);
-    line2[30] = '\0';
+    strncpy(line2, bufferRdsMsg + 35, 35);
+    line2[35] = '\0';
   } 
 else {
     line2[0] = '\0'; // Si le message ne dépasse pas 25 caractères
@@ -2263,7 +2263,7 @@ else {
   // Affichage de la deuxième ligne avec un décalage vertical, si elle n'est pas vide
   if (strlen(line2) > 0) 
   {
-    int lineSpacing = 15; // Ajustez cette valeur en fonction de la hauteur de la police
+    int lineSpacing = 13; // Ajustez cette valeur en fonction de la hauteur de la police
     spr.drawString(line2, rdsmess_offset_x, rdsmess_offset_y + lineSpacing);
   }
 }
@@ -3263,7 +3263,7 @@ void loop() {
   }
 
   if ((millis() - lastRDSCheck) > RDS_CHECK_TIME) {
-    if ((currentMode == FM) and (snr >= 10)) checkRDS();
+    if ((currentMode == FM) and (snr >= 12)) checkRDS();
     lastRDSCheck = millis();
   }
 
