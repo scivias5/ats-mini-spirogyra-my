@@ -78,7 +78,7 @@
 // #define mode_offset_y  114    // Mode vertical offset
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
-#define rds_offset_x   250    // RDS horizontal offset
+#define rds_offset_x   310    // RDS horizontal offset
 #define rds_offset_y   80    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
@@ -90,8 +90,8 @@
 
 // Stereo (or mono) mode indicator.
 #define MODE_OFFSET_X             100
-#define MODE_OFFSET_Y              15
-#define MODE_RADIUS                 8
+#define MODE_OFFSET_Y              16
+#define MODE_RADIUS                 6
 
 // Battery Monitoring
 #define BATT_ADC_READS          10  // ADC reads for average calculation (Maximum value = 16 to avoid rollover in average calculation)
