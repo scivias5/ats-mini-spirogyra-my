@@ -81,8 +81,8 @@
 #define rds_offset_x   315    // RDS horizontal offset
 #define rds_offset_y    70    // RDS vertical offset
 
-#define rdsmess_offset_x   98    // RDS message horizontal offset
-#define rdsmess_offset_y   92    // RDS message vertical offset
+#define rdsmess_offset_x   100    // RDS message horizontal offset
+#define rdsmess_offset_y    92    // RDS message vertical offset
 
 #define batt_offset_x  288    // Battery meter x offset
 #define batt_offset_y    0    // Battery meter y offset
@@ -2237,21 +2237,21 @@ if (currentMode == FM) {
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
   // Préparation des buffers pour deux lignes (25 caractères + 1 pour le '\0')
-  char line1[26];
-  char line2[26];
+  char line1[31];
+  char line2[31];
 
   // Copie des 25 premiers caractères dans line1
-  strncpy(line1, bufferRdsMsg, 25);
-  line1[25] = '\0'; // Assurez-vous de terminer la chaîne
+  strncpy(line1, bufferRdsMsg, 30);
+  line1[30] = '\0'; // Assurez-vous de terminer la chaîne
 
   // Calcul de la longueur totale de bufferRdsMsg
   int len = strlen(bufferRdsMsg);
   
-if (len > 25) 
+if (len > 30) 
 {
     // Copie des caractères suivants jusqu'à 25 caractères dans line2
-    strncpy(line2, bufferRdsMsg + 25, 25);
-    line2[25] = '\0';
+    strncpy(line2, bufferRdsMsg + 30, 30);
+    line2[30] = '\0';
   } 
 else {
     line2[0] = '\0'; // Si le message ne dépasse pas 25 caractères
@@ -2263,7 +2263,7 @@ else {
   // Affichage de la deuxième ligne avec un décalage vertical, si elle n'est pas vide
   if (strlen(line2) > 0) 
   {
-    int lineSpacing = 20; // Ajustez cette valeur en fonction de la hauteur de la police
+    int lineSpacing = 15; // Ajustez cette valeur en fonction de la hauteur de la police
     spr.drawString(line2, rdsmess_offset_x, rdsmess_offset_y + lineSpacing);
   }
 }
