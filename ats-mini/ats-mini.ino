@@ -79,7 +79,7 @@
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
 #define rds_offset_x   310    // RDS horizontal offset
-#define rds_offset_y   80    // RDS vertical offset
+#define rds_offset_y    70    // RDS vertical offset
 
 #define rdsmess_offset_x   98    // RDS message horizontal offset
 #define rdsmess_offset_y   92    // RDS message vertical offset
@@ -89,7 +89,7 @@
 #define clock_datum     90    // Clock x offset
 
 // Stereo (or mono) mode indicator.
-#define MODE_OFFSET_X             100
+#define MODE_OFFSET_X             220
 #define MODE_OFFSET_Y              16
 #define MODE_RADIUS                 6
 
@@ -2515,12 +2515,13 @@ void batteryMonitor() {
     spr.fillTriangle(batt_offset_x + 9 + 5, batt_offset_y + 1 + 6, batt_offset_x + 9 + 10, batt_offset_y + 1 + 6, batt_offset_x + 9 + 3, batt_offset_y + 1 + 13, theme[themeIdx].batt_icon);
     spr.fillRect(batt_offset_x + 9 + 1, batt_offset_y + 1 + 6, 9, 2, theme[themeIdx].batt_icon);
     spr.drawPixel(batt_offset_x + 9 + 3, batt_offset_y + 1 + 12, theme[themeIdx].batt_icon);
-  } else {
-    char voltage[8];
-    spr.fillRoundRect(batt_offset_x + 2, batt_offset_y + 3, chargeLevel, 10, 2, batteryLevelColor);
-    sprintf(voltage, "%.02fV", adc_volt_avr);
-    spr.drawString(voltage, batt_offset_x - 3, batt_offset_y, 2);
-  }
+//} 
+  //  else {
+  //  char voltage[8];
+  //  spr.fillRoundRect(batt_offset_x + 2, batt_offset_y + 3, chargeLevel, 10, 2, batteryLevelColor);
+  //  sprintf(voltage, "%.02fV", adc_volt_avr);
+  //  spr.drawString(voltage, batt_offset_x - 3, batt_offset_y, 2);
+  //}
 }
 
 
