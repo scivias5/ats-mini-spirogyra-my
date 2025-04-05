@@ -9,7 +9,7 @@
 #include "Rotary.h"                // Disabled half-step mode
 #include "patch_init.h"            // SSB patch for whole SSBRX initialization string
 #include "poxel_font16pt7b.h"      //Font1 Band
-#include "Technology9pt7b.h"       //Font2 RDS Station
+#include "Technology10pt7b.h"       //Font2 RDS Station
 #include "PixelOperator8p.h"      //Font3 RDS Message
 
 
@@ -90,7 +90,7 @@
 
 // Stereo (or mono) mode indicator.
 #define MODE_OFFSET_X             230
-#define MODE_OFFSET_Y              20
+#define MODE_OFFSET_Y              19
 #define MODE_RADIUS                 6
 
 // Battery Monitoring
@@ -2224,7 +2224,7 @@ void drawSprite()
       }
 
       spr.setTextDatum(MR_DATUM);
-      spr.setFreeFont(&Technology9pt7b);
+      spr.setFreeFont(&Technology10pt7b);
       spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
       //spr.drawString("*STATION*", rds_offset_x, rds_offset_y);
       spr.drawString(bufferStationName, rds_offset_x, rds_offset_y);
