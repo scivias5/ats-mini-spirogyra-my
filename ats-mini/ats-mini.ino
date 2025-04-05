@@ -2233,7 +2233,7 @@ void drawSprite()
 // RDS message
 if (currentMode == FM) {
   spr.setTextDatum(TL_DATUM);
-  spr.setFreeFont(&PixelOperator8p);
+  spr.setFreeFont (&PPixelOperator8pt7b);
   spr.setTextColor(theme[themeIdx].rds_text, theme[themeIdx].bg);
 
   // Préparation des buffers pour deux lignes (25 caractères + 1 pour le '\0')
