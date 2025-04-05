@@ -79,7 +79,7 @@
 #define vol_offset_x   120    // Volume horizontal offset
 #define vol_offset_y   150    // Volume vertical offset
 #define rds_offset_x   315    // RDS horizontal offset
-#define rds_offset_y    75    // RDS vertical offset
+#define rds_offset_y    72    // RDS vertical offset
 
 #define rdsmess_offset_x   100    // RDS message horizontal offset
 #define rdsmess_offset_y    92    // RDS message vertical offset
@@ -88,9 +88,9 @@
 #define batt_offset_y    0    // Battery meter y offset
 #define clock_datum     90    // Clock x offset
 
-// Stereo (or mono) mode indicator.
+// Stereo (or mono) mode indicator by m2608
 #define MODE_OFFSET_X             230
-#define MODE_OFFSET_Y              19
+#define MODE_OFFSET_Y              18
 #define MODE_RADIUS                 6
 
 // Battery Monitoring
@@ -262,8 +262,6 @@ bool pb1_short_released = false;        // Push button short released
 bool pb1_long_released = false;         // Push button long released
 
 bool display_on = true;                 // Display state
-
-int rdsScrollIndex = 0;  //Scrolling text
 
 // Status bar icon flags
 bool screen_toggle = false;             // Toggle when drawsprite is called
@@ -2026,12 +2024,12 @@ void drawMenu() {
 void drawStereoIndicator(uint16_t x, uint16_t y, uint16_t r, uint16_t color_stereo, uint16_t color_mono, boolean stereo) {
       if (stereo) {
         // Stereo: two intertwined circles.
-        spr.drawSmoothCircle(x - r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
-        spr.drawSmoothCircle(x + r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
+        spr.drawCircle(x - r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
+        spr.drawCircle(x + r/2, y, r, theme[themeIdx].Ster_icon, theme[themeIdx].menu_bg);
       }
       else {
         // Mono: one white circle.
-        spr.drawSmoothCircle(x, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
+        spr.drawCircle(x, y, r, theme[themeIdx].Mono_icon, theme[themeIdx].menu_bg);
       }
 }
 
@@ -2332,7 +2330,7 @@ void cleanBfoRdsInfo()
 
 void showRDSMsg()
 {
-  rdsMsg[50] = bufferRdsMsg[50] = '\0';
+  rdsMsg[60] = bufferRdsMsg[60] = '\0';
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
     cleanBfoRdsInfo();
