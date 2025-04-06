@@ -60,7 +60,7 @@ const ColorTheme theme[] = {
 #endif
   {
     "Default",
-    0x0000, // bg
+    0x0001, // bg
     0xFFFF, // text
     0xD69A, // text_muted
     0xF800, // text_warn
